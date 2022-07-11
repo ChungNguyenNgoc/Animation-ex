@@ -45,11 +45,11 @@ section {
       border-top: 1.8px solid rgba(255, 255, 255, 0.2);
       background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
-      animation: animate 6s linear infinite;
+      animation: animateGlass 6s linear infinite;
       animation-delay: calc(-1s * var(--chung));
     }
 
-    @keyframes animate {
+    @keyframes animateGlass {
       0%,
       100% {
         transform: translateY(-40px);
