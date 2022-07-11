@@ -9,7 +9,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(#0093E9, #B3F7EE);
+    background: linear-gradient(#0093e9, #b3f7ee);
     z-index: 10;
     pointer-events: none;
     mix-blend-mode: multiply;
@@ -50,7 +50,7 @@
     .cir-ul {
       list-style: none;
 
-      .cir-li-1 {
+      .cir-li {
         position: absolute;
         transform-origin: 0 240px;
         top: 10px;
@@ -59,221 +59,12 @@
         text-transform: uppercase;
         font-family: consolas;
         color: #fff;
-        transform: rotate(calc(29.5deg * 1));
+        transform: rotate(calc(29.5deg * var(--chung)));
 
-        .cir-span-1 {
+        .cir-span {
           display: block;
           color: #fff;
-          transform: rotate(calc(-29.5deg * 1));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-2 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 2));
-
-        .cir-span-2 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 2));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-3 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 3));
-
-        .cir-span-3 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 3));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-4 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 4));
-
-        .cir-span-4 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 4));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-5 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 5));
-
-        .cir-span-5 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 5));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-6 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 6));
-
-        .cir-span-6 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 6));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-7 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 7));
-
-        .cir-span-7 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 7));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-8 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 8));
-
-        .cir-span-8 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 8));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-9 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 9));
-
-        .cir-span-9 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 9));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-10 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 10));
-
-        .cir-span-10 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 10));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-11 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 11));
-
-        .cir-span-11 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 11));
-          text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
-        }
-      }
-
-      .cir-li-12 {
-        position: absolute;
-        transform-origin: 0 240px;
-        top: 10px;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: consolas;
-        color: #fff;
-        transform: rotate(calc(29.5deg * 12));
-
-        .cir-span-12 {
-          display: block;
-          color: #fff;
-          transform: rotate(calc(-29.5deg * 12));
+          transform: rotate(calc(-29.5deg * var(--chung)));
           text-shadow: 0 0 15px #fff, 0 0 35px #fff, 0 0 75px #fff, 0 0 150px #fff;
         }
       }
