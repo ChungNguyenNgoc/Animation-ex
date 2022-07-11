@@ -33,7 +33,7 @@
       border-radius: 2px;
       background: linear-gradient(0deg, transparent, #fff);
       transform-origin: bottom;
-      animation: animateNiddles 20s steps(60) infinite;
+      animation: animateNiddles 10s steps(60) infinite;
     }
 
     &::after {
