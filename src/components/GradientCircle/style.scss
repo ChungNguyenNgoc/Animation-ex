@@ -33,7 +33,7 @@
       border-radius: 2px;
       background: linear-gradient(0deg, transparent, #fff);
       transform-origin: bottom;
-      animation: animateNiddles 10s steps(60) infinite;
+      animation: animateNiddles 60s steps(60) infinite;
     }
 
     &::after {
@@ -44,7 +44,7 @@
       border-radius: 2px;
       background: linear-gradient(0deg, transparent, #fff);
       transform-origin: bottom;
-      animation: animateNiddles 120s steps(60) infinite;
+      animation: animateNiddles 720s steps(60) infinite;
     }
 
     .cir-ul {
