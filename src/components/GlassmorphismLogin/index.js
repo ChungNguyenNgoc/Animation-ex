@@ -3,7 +3,7 @@ import "./style.scss";
 
 const GlassmorphismLogin = () => {
   return (
-    <div className="">
+    <div className="glass">
       <section>
         <div className="color"></div>
         <div className="color"></div>

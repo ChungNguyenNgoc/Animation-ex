@@ -1,3 +1,4 @@
+import CheckBox from "./components/CheckBox";
 import Climb from "./components/Climb";
 import GlassmorphismLogin from "./components/GlassmorphismLogin";
 import GradientCircle from "./components/GradientCircle";
@@ -7,7 +8,8 @@ function App() {
     <div className="app">
       {/* <GradientCircle /> */}
       {/* <GlassmorphismLogin /> */}
-      <Climb />
+      {/* <Climb /> */}
+      <CheckBox />
     </div>
   );
 }
