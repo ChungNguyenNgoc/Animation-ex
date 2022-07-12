@@ -56,7 +56,9 @@ const ScrollWebpage = () => {
               Sometimes, Loneliness is very dangerous. It's addicting. Once you
               feel how peaceful it is, you don't wanna deal with people @@!...
             </p>
-            <a href="#" className="btn"></a>
+            <a href="#" className="btn">
+              Buy now
+            </a>
           </div>
         </section>
         <section
@@ -72,7 +74,9 @@ const ScrollWebpage = () => {
               Sometimes, Loneliness is very dangerous. It's addicting. Once you
               feel how peaceful it is, you don't wanna deal with people @@!...
             </p>
-            <a href="#" className="btn"></a>
+            <a href="#" className="btn">
+              Buy now
+            </a>
           </div>
         </section>
         <section
@@ -88,7 +92,9 @@ const ScrollWebpage = () => {
               Sometimes, Loneliness is very dangerous. It's addicting. Once you
               feel how peaceful it is, you don't wanna deal with people @@!...
             </p>
-            <a href="#" className="btn"></a>
+            <a href="#" className="btn">
+              Buy now
+            </a>
           </div>
         </section>
         <section
@@ -104,7 +110,9 @@ const ScrollWebpage = () => {
               Sometimes, Loneliness is very dangerous. It's addicting. Once you
               feel how peaceful it is, you don't wanna deal with people @@!...
             </p>
-            <a href="#" className="btn"></a>
+            <a href="#" className="btn">
+              Buy now
+            </a>
           </div>
         </section>
         <section
@@ -120,7 +128,9 @@ const ScrollWebpage = () => {
               Sometimes, Loneliness is very dangerous. It's addicting. Once you
               feel how peaceful it is, you don't wanna deal with people @@!...
             </p>
-            <a href="#" className="btn"></a>
+            <a href="#" className="btn">
+              Buy now
+            </a>
           </div>
         </section>
       </main>
