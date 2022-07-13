@@ -1,3 +1,4 @@
+import CardEffects from "./components/CardEffects";
 import CheckBox from "./components/CheckBox";
 import Climb from "./components/Climb";
 import GlassmorphismLogin from "./components/GlassmorphismLogin";
@@ -13,7 +14,8 @@ function App() {
       {/* <Climb /> */}
       {/* <CheckBox /> */}
       {/* <ScrollWebpage /> */}
-      <VideoBackground />
+      {/* <VideoBackground /> */}
+      <CardEffects />
     </div>
   );
 }
