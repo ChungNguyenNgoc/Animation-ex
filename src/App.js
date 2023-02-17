@@ -8,6 +8,7 @@ import ToastMessage from "./components/ToastMessage";
 import VideoBackground from "./components/VideoBackground";
 import HoverEffects from "./components/HoverEffects";
 import "./styles.scss";
+import SpinAnimate from "./components/SpinAnimate";
 function App() {
   return (
     <div className="app">
@@ -19,7 +20,8 @@ function App() {
       {/* <VideoBackground /> */}
       {/* <CardEffects /> */}
       {/* <ToastMessage /> */}
-      <HoverEffects />
+      {/* <HoverEffects /> */}
+      <SpinAnimate />
     </div>
   );
 }
