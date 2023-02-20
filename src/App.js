@@ -9,6 +9,7 @@ import VideoBackground from "./components/VideoBackground";
 import HoverEffects from "./components/HoverEffects";
 import "./styles.scss";
 import SpinAnimate from "./components/SpinAnimate";
+import AvatarMovie from "./components/AvatarMovie";
 function App() {
   return (
     <div className="app">
@@ -21,7 +22,8 @@ function App() {
       {/* <CardEffects /> */}
       {/* <ToastMessage /> */}
       {/* <HoverEffects /> */}
-      <SpinAnimate />
+      {/* <SpinAnimate /> */}
+      <AvatarMovie />
     </div>
   );
 }
