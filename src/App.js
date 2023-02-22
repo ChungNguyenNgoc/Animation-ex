@@ -11,6 +11,7 @@ import "./styles.scss";
 import SpinAnimate from "./components/SpinAnimate";
 import AvatarMovie from "./components/AvatarMovie";
 import CreativeStudio from "./components/CreativeStudio";
+import BorderAnimation from "./components/BorderAnimation";
 function App() {
   return (
     <div className="app">
@@ -25,7 +26,8 @@ function App() {
       {/* <HoverEffects /> */}
       {/* <SpinAnimate /> */}
       {/* <AvatarMovie /> */}
-      <CreativeStudio />
+      {/* <CreativeStudio /> */}
+      <BorderAnimation />
     </div>
   );
 }

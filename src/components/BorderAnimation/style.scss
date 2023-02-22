@@ -1,0 +1,53 @@
+.border-animation {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #181818;
+  div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+    box-shadow: 16px 14px 20px #0000008c;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      background-image: conic-gradient(transparent 120deg, #32ff17 360deg);
+      width: 150%;
+      height: 150%;
+      position: absolute;
+      animation: rotate 2s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    &::after {
+      content: "Animation";
+      width: 19rem;
+      height: 19rem;
+      background: #101010;
+      position: absolute;
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #32ff17;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.5rem;
+      box-shadow: inset 20px 20px 20px #0000008c;
+    }
+  }
+}
