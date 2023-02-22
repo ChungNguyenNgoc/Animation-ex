@@ -10,6 +10,7 @@ import HoverEffects from "./components/HoverEffects";
 import "./styles.scss";
 import SpinAnimate from "./components/SpinAnimate";
 import AvatarMovie from "./components/AvatarMovie";
+import CreativeStudio from "./components/CreativeStudio";
 function App() {
   return (
     <div className="app">
@@ -23,7 +24,8 @@ function App() {
       {/* <ToastMessage /> */}
       {/* <HoverEffects /> */}
       {/* <SpinAnimate /> */}
-      <AvatarMovie />
+      {/* <AvatarMovie /> */}
+      <CreativeStudio />
     </div>
   );
 }
