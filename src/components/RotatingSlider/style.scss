@@ -1,0 +1,87 @@
+.rotate-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  height: 100%;
+  width: 100%;
+
+  .rotating-slider {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .box {
+      position: absolute;
+      margin: 0 auto;
+      width: 10rem;
+      height: 12rem;
+      transform-style: preserve-3d;
+      animation: animate 20s linear infinite;
+      z-index: 999;
+
+      @keyframes animate {
+        0% {
+          transform: perspective(100rem) rotateY(360deg);
+        }
+        100% {
+          transform: perspective(100rem) rotateY(0deg);
+        }
+      }
+
+      span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(20rem) translateY(20rem);
+        backface-visibility: hidden;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .box2 {
+      position: absolute;
+      margin: 0 auto;
+      width: 10rem;
+      height: 12rem;
+      transform-style: preserve-3d;
+      animation: animate 20s linear infinite;
+
+      @keyframes animate {
+        0% {
+          transform: perspective(100rem) rotateY(360deg);
+        }
+        100% {
+          transform: perspective(100rem) rotateY(0deg);
+        }
+      }
+
+      span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(20rem) translateY(20rem);
+
+        img {
+          position: absolute;
+          transform: rotateY(180deg);
+          backface-visibility: hidden;
+          overflow: hidden;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

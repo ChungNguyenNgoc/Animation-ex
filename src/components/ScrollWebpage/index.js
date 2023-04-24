@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./style.scss";
 import soHyun1 from "./soHyun1.png";

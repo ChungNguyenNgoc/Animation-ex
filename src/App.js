@@ -12,6 +12,7 @@ import SpinAnimate from "./components/SpinAnimate";
 import AvatarMovie from "./components/AvatarMovie";
 import CreativeStudio from "./components/CreativeStudio";
 import BorderAnimation from "./components/BorderAnimation";
+import RotatingSlider from "./components/RotatingSlider";
 function App() {
   return (
     <div className="app">
@@ -27,7 +28,8 @@ function App() {
       {/* <SpinAnimate /> */}
       {/* <AvatarMovie /> */}
       {/* <CreativeStudio /> */}
-      <BorderAnimation />
+      {/* <BorderAnimation /> */}
+      <RotatingSlider />
     </div>
   );
 }
