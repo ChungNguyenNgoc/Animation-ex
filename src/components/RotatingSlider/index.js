@@ -68,6 +68,60 @@ const RotatingSlider = () => {
           </span>
         </div>
       </div>
+      <div className="rotating-slider2">
+        <div className="box">
+          <span style={{ "--i": 1 }}>
+            <img src={chung1} alt="" />
+          </span>
+          <span style={{ "--i": 2 }}>
+            <img src={chung2} alt="" />
+          </span>
+          <span style={{ "--i": 3 }}>
+            <img src={chung3} alt="" />
+          </span>
+          <span style={{ "--i": 4 }}>
+            <img src={chung4} alt="" />
+          </span>
+          <span style={{ "--i": 5 }}>
+            <img src={chung5} alt="" />
+          </span>
+          <span style={{ "--i": 6 }}>
+            <img src={chung6} alt="" />
+          </span>
+          <span style={{ "--i": 7 }}>
+            <img src={chung7} alt="" />
+          </span>
+          <span style={{ "--i": 8 }}>
+            <img src={chung8} alt="" />
+          </span>
+        </div>
+        <div className="box2">
+          <span style={{ "--i": 1 }}>
+            <img src={poster} alt="" />
+          </span>
+          <span style={{ "--i": 2 }}>
+            <img src={poster} alt="" />
+          </span>
+          <span style={{ "--i": 3 }}>
+            <img src={poster} alt="" />
+          </span>
+          <span style={{ "--i": 4 }}>
+            <img src={poster} alt="" />
+          </span>
+          <span style={{ "--i": 5 }}>
+            <img src={poster} alt="" />
+          </span>
+          <span style={{ "--i": 6 }}>
+            <img src={poster} alt="" />
+          </span>
+          <span style={{ "--i": 7 }}>
+            <img src={poster} alt="" />
+          </span>
+          <span style={{ "--i": 8 }}>
+            <img src={poster} alt="" />
+          </span>
+        </div>
+      </div>
     </div>
   );
 };
