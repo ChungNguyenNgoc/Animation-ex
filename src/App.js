@@ -13,6 +13,7 @@ import AvatarMovie from "./components/AvatarMovie";
 import CreativeStudio from "./components/CreativeStudio";
 import BorderAnimation from "./components/BorderAnimation";
 import RotatingSlider from "./components/RotatingSlider";
+import WaterDrops from "./components/WaterDrops";
 function App() {
   return (
     <div className="app">
@@ -29,7 +30,8 @@ function App() {
       {/* <AvatarMovie /> */}
       {/* <CreativeStudio /> */}
       {/* <BorderAnimation /> */}
-      <RotatingSlider />
+      {/* <RotatingSlider /> */}
+      <WaterDrops />
     </div>
   );
 }
