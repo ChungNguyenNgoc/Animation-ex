@@ -1,9 +1,10 @@
 .rotate-wrap {
   display: flex;
   flex-direction: column;
+  margin: auto;
   gap: 40rem;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 
   .rotating-slider {
     position: relative;
@@ -36,13 +37,15 @@
         transform: rotateY(calc(var(--i) * 45deg)) translateZ(20rem) translateY(20rem);
 
         img {
-          position: absolute;
+          position: relative;
           backface-visibility: hidden;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-bottom-right-radius: 50% 5%;
+          border-bottom-left-radius: 50% 5%;
         }
       }
     }
@@ -80,6 +83,8 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-top-right-radius: 50% 3%;
+          border-top-left-radius: 50% 3%;
         }
       }
     }
@@ -126,6 +131,8 @@
           height: 100%;
           object-fit: cover;
           mask-image: linear-gradient(transparent, #000);
+          border-top-right-radius: 50% 3%;
+          border-top-left-radius: 50% 3%;
         }
       }
     }
@@ -163,7 +170,9 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
-          mask-image: linear-gradient(transparent, #000);
+          mask-image: linear-gradient(transparent, #0004);
+          border-bottom-right-radius: 50% 3%;
+          border-bottom-left-radius: 50% 3%;
         }
       }
     }
