@@ -8,6 +8,14 @@ const WaterDrops = () => {
       <div className="drop"></div>
       <div className="drop"></div>
       <div className="drop"></div>
+      <div className="drop"></div>
+      <div className="drop"></div>
+      <div className="drop"></div>
+      <div className="drop"></div>
+      <div className="drop"></div>
+      <div className="drop"></div>
+      <div className="drop"></div>
+      <div className="drop"></div>
     </div>
   );
 };
