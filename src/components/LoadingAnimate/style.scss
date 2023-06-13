@@ -1,0 +1,134 @@
+$loader--width: 15rem;
+$loader-dot--size: 2rem;
+
+.loading-animate {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .loader {
+    position: relative;
+    height: $loader-dot--size;
+    width: $loader--width;
+    transition: all 2s;
+
+    &--dot {
+      height: $loader-dot--size;
+      width: $loader-dot--size;
+      border-radius: 50%;
+      background-color: black;
+      position: absolute;
+      border: 2px solid white;
+      animation: loader 2s ease-in-out infinite;
+
+      &:first-child {
+        background-color: #8cc759;
+        animation-delay: 0.5s;
+      }
+      &:nth-child(2) {
+        background-color: #8c6daf;
+        animation-delay: 0.4s;
+      }
+      &:nth-child(3) {
+        background-color: #ef5d74;
+        animation-delay: 0.3s;
+      }
+
+      &:nth-child(4) {
+        background-color: #f9a74b;
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(5) {
+        background-color: #60beeb;
+        animation-delay: 0.1s;
+      }
+      &:nth-child(6) {
+        background-color: #fbef5a;
+        animation-delay: 0s;
+      }
+    }
+
+    &--text {
+      position: absolute;
+      top: 200%;
+      left: 0;
+      right: 0;
+      width: 4rem;
+      margin: auto;
+
+      &:after {
+        content: "Loading";
+        font-weight: bold;
+
+        animation: loading-text 1s infinite;
+      }
+    }
+
+    @keyframes loader {
+      15% {
+        transform: translateX(0);
+      }
+
+      45% {
+        transform: translateX($loader--width - $loader-dot--size);
+      }
+
+      65% {
+        transform: translateX($loader--width - $loader-dot--size);
+      }
+
+      95% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes loading-text {
+      0% {
+        content: "Loading";
+      }
+
+      10% {
+        content: "Loading..";
+      }
+
+      20% {
+        content: "Loading...";
+      }
+
+      30% {
+        content: "Loading....";
+      }
+
+      40% {
+        content: "Loading.....";
+      }
+
+      50% {
+        content: "Loading......";
+      }
+
+      60% {
+        content: "Loading.......";
+      }
+
+      70% {
+        content: "Loading........";
+      }
+
+      80% {
+        content: "Loading.........";
+      }
+
+      90% {
+        content: "Loading..........";
+      }
+
+      100% {
+        content: "Loading...........";
+      }
+    }
+  }
+}
