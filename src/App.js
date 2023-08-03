@@ -28,13 +28,13 @@ function App() {
       {/* <CardEffects /> */}
       {/* <ToastMessage /> */}
       {/* <HoverEffects /> */}
-      {/* <SpinAnimate /> */}
+      <SpinAnimate />
       {/* <AvatarMovie /> */}
       {/* <CreativeStudio /> */}
       {/* <BorderAnimation /> */}
       {/* <RotatingSlider /> */}
       {/* <WaterDrops /> */}
-      <LoadingAnimate />
+      {/* <LoadingAnimate /> */}
     </div>
   );
 }
