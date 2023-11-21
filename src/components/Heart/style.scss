@@ -1,0 +1,167 @@
+.heart-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  min-height: 100vh;
+
+  .heart {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &_heart-quantity {
+      width: max-content;
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1.2;
+      color: #fff;
+      margin-right: 0.8rem;
+    }
+
+    &_heart-effect-1,
+    &_heart-effect-2,
+    &_heart-effect-3,
+    &_heart-effect-4 {
+      position: absolute;
+      width: 0.6rem;
+      height: 0.6rem;
+
+      &_item {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 100%;
+        background-color: #e84a43;
+        opacity: 0;
+        z-index: 1;
+      }
+    }
+
+    &_heart-effect-1 {
+      left: 4rem;
+      top: 1.6rem;
+      transform: rotate(45deg);
+    }
+
+    &_heart-effect-2 {
+      left: 4.3rem;
+      top: -0.1rem;
+      transform: rotate(-45deg);
+    }
+
+    &_heart-effect-3 {
+      left: 2.3rem;
+      top: -0.25rem;
+      transform: rotate(225deg);
+    }
+
+    &_heart-effect-4 {
+      left: 2.1rem;
+      top: 1.47rem;
+      transform: rotate(135deg);
+    }
+
+    &_heart-border {
+      position: absolute;
+      left: 2.4rem;
+      top: -0.2rem;
+      border-radius: 100%;
+      width: 2.2rem;
+      height: 2.2rem;
+      border: solid 1px #ea442b;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    svg {
+      display: block;
+      transition: all 0.3s;
+      width: 2rem;
+      height: 2rem;
+      fill: transparent;
+      stroke: #ea442b;
+      cursor: pointer;
+      z-index: 10;
+    }
+  }
+
+  .heart-active {
+    svg {
+      fill: #ea442b;
+      animation: heartAnimate 0.4s linear;
+    }
+  }
+
+  .heart-active:has(.heart_heart-border) {
+    .heart_heart-border {
+      animation: heartBorderAnimate 0.4s linear;
+    }
+    .heart_heart-effect-1_item {
+      animation: heartEffectAnimate 0.4s linear;
+    }
+    .heart_heart-effect-2_item {
+      animation: heartEffectAnimate 0.4s linear;
+    }
+    .heart_heart-effect-3_item {
+      animation: heartEffectAnimate 0.4s linear;
+    }
+    .heart_heart-effect-4_item {
+      animation: heartEffectAnimate 0.4s linear;
+    }
+  }
+
+  @keyframes heartEffectAnimate {
+    0% {
+      transform: translateX(0rem) scale(0.2);
+      opacity: 0;
+    }
+    20% {
+      transform: translateX(0.2rem) scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0.5rem) scale(0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes heartBorderAnimate {
+    0% {
+      transform: scale(0.1);
+      opacity: 0.1;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  @keyframes heartAnimate {
+    0% {
+      opacity: 0;
+      transform: scale(0.1);
+    }
+    25% {
+      transform: scale(0.6);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    75% {
+      transform: scale(0.6);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

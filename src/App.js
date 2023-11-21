@@ -15,6 +15,7 @@ import BorderAnimation from "./components/BorderAnimation";
 import RotatingSlider from "./components/RotatingSlider";
 import WaterDrops from "./components/WaterDrops";
 import LoadingAnimate from "./components/LoadingAnimate";
+import Heart from "./components/Heart";
 
 function App() {
   return (
@@ -28,13 +29,14 @@ function App() {
       {/* <CardEffects /> */}
       {/* <ToastMessage /> */}
       {/* <HoverEffects /> */}
-      <SpinAnimate />
+      {/* <SpinAnimate /> */}
       {/* <AvatarMovie /> */}
       {/* <CreativeStudio /> */}
       {/* <BorderAnimation /> */}
       {/* <RotatingSlider /> */}
       {/* <WaterDrops /> */}
       {/* <LoadingAnimate /> */}
+      <Heart />
     </div>
   );
 }
