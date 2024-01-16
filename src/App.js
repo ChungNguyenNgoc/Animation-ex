@@ -16,6 +16,7 @@ import RotatingSlider from "./components/RotatingSlider";
 import WaterDrops from "./components/WaterDrops";
 import LoadingAnimate from "./components/LoadingAnimate";
 import Heart from "./components/Heart";
+import AppleAnimation from "./components/AppleAnimation";
 
 function App() {
   return (
@@ -36,7 +37,8 @@ function App() {
       {/* <RotatingSlider /> */}
       {/* <WaterDrops /> */}
       {/* <LoadingAnimate /> */}
-      <Heart />
+      {/* <Heart /> */}
+      <AppleAnimation />
     </div>
   );
 }

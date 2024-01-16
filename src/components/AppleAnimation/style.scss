@@ -1,0 +1,59 @@
+.apple-animation {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #222;
+
+  .logo {
+    margin: auto;
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      &::before {
+        content: "\f179";
+        font-family: fontAwesome;
+        position: absolute;
+        top: 0.45rem;
+        left: 0;
+        width: 100%;
+        height: 0;
+        font-size: 10rem;
+        overflow: hidden;
+        text-align: center;
+        line-height: 15rem;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        animation: appleAnimation 2.5s linear infinite;
+      }
+
+      b {
+        font-size: 10rem;
+        font-weight: 700;
+        color: transparent;
+        -webkit-text-stroke: 1px #fff;
+        transition: 0.5s;
+      }
+    }
+
+    @keyframes appleAnimation {
+      0% {
+        height: 0;
+        filter: drop-shadow(0 0 20px #fff);
+      }
+      50% {
+        height: 100%;
+        filter: drop-shadow(0 0 20px #fff);
+      }
+      100% {
+        height: 0;
+        filter: drop-shadow(0 0 20px #fff);
+      }
+    }
+  }
+}
