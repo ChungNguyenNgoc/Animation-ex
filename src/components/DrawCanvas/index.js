@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import "./style.scss";
 import QuocHocHue from "./quoc_hoc_hue.jpg";
 
 const DrawCanvas = () => {
-  const canvasRef = useRef(null);
   const [coordinates, setCoordinates] = useState([]);
   const [clientSize, setClientSize] = useState({
     width: null,
@@ -19,18 +19,37 @@ const DrawCanvas = () => {
     setNaturalSize({ width: naturalWidth, height: naturalHeight });
   };
 
-  const handleCanvasClick = (e) => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-
-    console.debug("e: ", e);
-  };
-
   useEffect(() => {
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
     const img = document.getElementById("imageId123");
-    const width = img.clientWidth;
-    const height = img.clientHeight;
-    setClientSize({ width, height });
+
+    setClientSize({ width: img.clientWidth, height: img.clientHeight });
+
+    if (img) {
+      const getCursorPosition = (e) => {
+        const rect = img.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        setCoordinates((prev) => {
+          if (prev?.some((it) => it.x === x && it.y === y)) {
+            return [...prev];
+          }
+          return [...prev, { x, y }];
+        });
+
+        ctx.fillStyle = "red";
+        ctx.fillRect(x, y, 6, 6);
+      };
+
+      img.addEventListener("click", (e) => {
+        getCursorPosition(e);
+      });
+      return () => {
+        img.removeEventListener("click", getCursorPosition);
+      };
+    }
   }, []);
 
   return (
@@ -43,11 +62,12 @@ const DrawCanvas = () => {
           onLoad={handleImageLoad}
         />
         <canvas
+          id="canvasId123"
           className="draw-canvas_wrap-img_canvasEle"
-          ref={canvasRef}
-          width={clientSize.width}
-          height={clientSize.height}
-          onClick={handleCanvasClick}
+          // width={clientSize.width}
+          // height={clientSize.height}
+          width={400}
+          height={400}
         />
       </div>
     </div>
