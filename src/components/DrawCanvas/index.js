@@ -20,10 +20,7 @@ const DrawCanvas = () => {
   };
 
   useEffect(() => {
-    const canvas = document.querySelector("canvas");
-    const ctx = canvas.getContext("2d");
     const img = document.getElementById("imageId123");
-
     setClientSize({ width: img.clientWidth, height: img.clientHeight });
 
     if (img) {
