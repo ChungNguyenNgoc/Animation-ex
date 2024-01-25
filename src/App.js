@@ -17,6 +17,7 @@ import WaterDrops from "./components/WaterDrops";
 import LoadingAnimate from "./components/LoadingAnimate";
 import Heart from "./components/Heart";
 import AppleAnimation from "./components/AppleAnimation";
+import DrawCanvas from "./components/DrawCanvas";
 
 function App() {
   return (
@@ -38,7 +39,8 @@ function App() {
       {/* <WaterDrops /> */}
       {/* <LoadingAnimate /> */}
       {/* <Heart /> */}
-      <AppleAnimation />
+      {/* <AppleAnimation /> */}
+      <DrawCanvas />
     </div>
   );
 }
