@@ -33,14 +33,13 @@ const DrawCanvas = () => {
         const y = e.clientY - rect.top;
 
         setCoordinates((prev) => {
+          console.debug("prev: ", prev);
+
           if (prev?.some((it) => it.x === x && it.y === y)) {
             return [...prev];
           }
           return [...prev, { x, y }];
         });
-
-        ctx.fillStyle = "red";
-        ctx.fillRect(x, y, 6, 6);
       };
 
       img.addEventListener("click", (e) => {
@@ -51,6 +50,34 @@ const DrawCanvas = () => {
       };
     }
   }, []);
+
+  useEffect(() => {
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "red";
+
+    // Draw a circle at each point
+    coordinates.forEach((it) => {
+      ctx.beginPath();
+      ctx.arc(it.x, it.y, 5, 0, 2 * Math.PI);
+      ctx.fill();
+    });
+
+    // Draw lines connecting the points
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    coordinates.forEach((it, index) => {
+      if (index === 0) {
+        ctx.moveTo(it.x, it.y);
+      } else {
+        ctx.lineTo(it.x, it.y);
+      }
+    });
+    ctx.stroke();
+  }, [coordinates]);
 
   return (
     <div className="draw-canvas">
