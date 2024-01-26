@@ -49,8 +49,6 @@ const DrawCanvas = () => {
     };
 
     const handleMouseMove = (e) => {
-      // e.preventDefault();
-      e.stopPropagation();
       if (selectedPointIndex != null) {
         const canvasTarget = e.target;
         const rect = canvasTarget.getBoundingClientRect();
@@ -66,9 +64,8 @@ const DrawCanvas = () => {
     };
 
     const handleMouseUp = (e) => {
-      // e.preventDefault();
-      // e.stopPropagation();
       setSelectedPointIndex(null);
+      setCoordinates([...coordinates]);
     };
 
     const drawOnCanvas = () => {
