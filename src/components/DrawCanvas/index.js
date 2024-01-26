@@ -65,7 +65,7 @@ const DrawCanvas = () => {
     });
 
     // Draw lines connecting the points
-    ctx.strokeStyle = "blue";
+    ctx.strokeStyle = randomColor();
     ctx.lineWidth = 2;
     ctx.beginPath();
     coordinates.forEach((it, index) => {
