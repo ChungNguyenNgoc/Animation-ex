@@ -118,9 +118,6 @@ const DrawCanvas = () => {
     }
   }, [coordinates, selectedPointIndex]);
 
-  console.debug("coordinates: ", coordinates);
-  console.debug("selectedPointIndex: ", selectedPointIndex);
-
   return (
     <div className="draw-canvas">
       <div className="draw-canvas_wrap-img">
