@@ -22,18 +22,38 @@ const DrawCanvas = () => {
 
   useEffect(() => {
     const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const isPointInsidePolygon = (x, y, vertices) => {
+      ctx.beginPath();
+      vertices.forEach((it, index) => {
+        if (index === 0) {
+          ctx.moveTo(it.x, it.y);
+        } else {
+          ctx.lineTo(it.x, it.y);
+        }
+      });
+      ctx.closePath();
+      return ctx.isPointInPath(x, y);
+    };
 
     const handleCanvasClick = (e) => {
       const canvasTarget = e.target;
       const rect = canvasTarget.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      setCoordinates((prev) => {
-        if (prev?.some((it) => it.x === x && it.y === y)) {
-          return [...prev];
-        }
-        return [...prev, { x, y }];
-      });
+
+      if (isPointInsidePolygon(x, y, coordinates)) {
+        console.debug("inside");
+      } else {
+        console.debug("outside");
+        setCoordinates((prev) => {
+          if (prev?.some((it) => it.x === x && it.y === y)) {
+            return [...prev];
+          }
+          return [...prev, { x, y }];
+        });
+      }
     };
 
     const handleCanvasMousedown = (e) => {
@@ -55,32 +75,33 @@ const DrawCanvas = () => {
     };
 
     const handleMouseMove = (e) => {
-      if (selectedPointIndex != null) {
-        const canvasTarget = e.target;
-        const rect = canvasTarget.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        setCoordinates((prevPoints) =>
-          prevPoints.map((point, index) =>
-            index === selectedPointIndex ? { x, y } : point,
-          ),
-        );
+      if (selectedPointIndex == null) {
+        return;
       }
+      const canvasTarget = e.target;
+      const rect = canvasTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      setCoordinates((prevPoints) =>
+        prevPoints.map((point, index) =>
+          index === selectedPointIndex ? { x, y } : point,
+        ),
+      );
     };
 
     const handleMouseUp = (e) => {
       setSelectedPointIndex(null);
     };
 
-    const drawOnCanvas = () => {
-      const ctx = canvas.getContext("2d");
+    (function drawOnCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Draw a circle at each point
       coordinates.forEach((it) => {
         ctx.beginPath();
         ctx.arc(it.x, it.y, 6, 0, 2 * Math.PI);
+        ctx.closePath();
         ctx.fillStyle = randomColor();
         ctx.fill();
       });
@@ -100,9 +121,7 @@ const DrawCanvas = () => {
       ctx.stroke();
       ctx.fillStyle = "#ffffff66";
       ctx.fill();
-    };
-
-    drawOnCanvas();
+    })();
 
     if (canvas) {
       canvas.addEventListener("click", handleCanvasClick);
@@ -117,39 +136,6 @@ const DrawCanvas = () => {
       };
     }
   }, [coordinates, selectedPointIndex]);
-
-  useEffect(() => {
-    const canvas = document.querySelector("canvas");
-    const ctx = canvas.getContext("2d");
-
-    const isPointInsidePolygon = (x, y, vertices) => {
-      ctx.beginPath();
-      ctx.arc(x, y, 6, 0, 2 * Math.PI);
-      ctx.fillStyle = "red";
-      ctx.fill();
-      ctx.closePath();
-
-      ctx.beginPath();
-      vertices.forEach((it, index) => {
-        if (index === 0) {
-          ctx.moveTo(it.x, it.y);
-        } else {
-          ctx.lineTo(it.x, it.y);
-        }
-      });
-      ctx.closePath();
-      return ctx.isPointInPath(x, y);
-    };
-
-    const testPointX = 50;
-    const testPointY = 50;
-
-    if (isPointInsidePolygon(testPointX, testPointY, coordinates)) {
-      console.debug("Point is inside the polygon");
-    } else {
-      console.debug("Point is outside the polygon");
-    }
-  }, [coordinates]);
 
   return (
     <div className="draw-canvas">
