@@ -34,8 +34,6 @@ const DrawCanvas = () => {
         const y = e.clientY - rect.top;
 
         setCoordinates((prev) => {
-          console.debug("prev: ", prev);
-
           if (prev?.some((it) => it.x === x && it.y === y)) {
             return [...prev];
           }
@@ -78,6 +76,7 @@ const DrawCanvas = () => {
       }
     });
     ctx.stroke();
+    ctx.fill();
   }, [coordinates]);
 
   return (
