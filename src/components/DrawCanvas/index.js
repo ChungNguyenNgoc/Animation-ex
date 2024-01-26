@@ -118,6 +118,39 @@ const DrawCanvas = () => {
     }
   }, [coordinates, selectedPointIndex]);
 
+  useEffect(() => {
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const isPointInsidePolygon = (x, y, vertices) => {
+      ctx.beginPath();
+      ctx.arc(x, y, 6, 0, 2 * Math.PI);
+      ctx.fillStyle = "red";
+      ctx.fill();
+      ctx.closePath();
+
+      ctx.beginPath();
+      vertices.forEach((it, index) => {
+        if (index === 0) {
+          ctx.moveTo(it.x, it.y);
+        } else {
+          ctx.lineTo(it.x, it.y);
+        }
+      });
+      ctx.closePath();
+      return ctx.isPointInPath(x, y);
+    };
+
+    const testPointX = 50;
+    const testPointY = 50;
+
+    if (isPointInsidePolygon(testPointX, testPointY, coordinates)) {
+      console.debug("Point is inside the polygon");
+    } else {
+      console.debug("Point is outside the polygon");
+    }
+  }, [coordinates]);
+
   return (
     <div className="draw-canvas">
       <div className="draw-canvas_wrap-img">
