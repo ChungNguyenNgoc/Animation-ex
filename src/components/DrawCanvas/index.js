@@ -10,6 +10,7 @@ const DrawCanvas = () => {
     height: null,
   });
   const [selectedPointIndex, setSelectedPointIndex] = useState(null);
+  const [selectedPointInside, setSelectedPointInside] = useState(null);
   const [checkPointEvent, setCheckPointEvent] = useState(false);
 
   const randomColor = () => {
@@ -61,7 +62,8 @@ const DrawCanvas = () => {
       const y = e.clientY - rect.top;
 
       if (isPointInsidePolygon(x, y, coordinates)) {
-        console.debug("inside");
+        setSelectedPointInside({ x, y });
+        // do something
       } else {
         const clickedPointIndex = coordinates.findIndex((point) => {
           const distance = Math.sqrt(
@@ -88,18 +90,21 @@ const DrawCanvas = () => {
         setCheckPointEvent(false);
       }
 
-      if (selectedPointIndex == null) {
-        return;
+      if (selectedPointIndex != null) {
+        setCoordinates((prevPoints) =>
+          prevPoints.map((point, index) =>
+            index === selectedPointIndex ? { x, y } : point,
+          ),
+        );
       }
-      setCoordinates((prevPoints) =>
-        prevPoints.map((point, index) =>
-          index === selectedPointIndex ? { x, y } : point,
-        ),
-      );
+      if (selectedPointInside != null) {
+        // do something
+      }
     };
 
     const handleMouseUp = (e) => {
       setSelectedPointIndex(null);
+      setSelectedPointInside(null);
     };
 
     (function drawOnCanvas() {
@@ -132,15 +137,16 @@ const DrawCanvas = () => {
     })();
 
     if (canvas) {
-      canvas.addEventListener("click", handleCanvasClick);
       canvas.addEventListener("mousedown", handleCanvasMousedown);
       canvas.addEventListener("mousemove", handleMouseMove);
       canvas.addEventListener("mouseup", handleMouseUp);
+      canvas.addEventListener("click", handleCanvasClick);
+
       return () => {
-        canvas.removeEventListener("click", handleCanvasClick);
         canvas.removeEventListener("mousedown", handleCanvasMousedown);
         canvas.removeEventListener("mousemove", handleMouseMove);
         canvas.removeEventListener("mouseup", handleMouseUp);
+        canvas.removeEventListener("click", handleCanvasClick);
       };
     }
   }, [coordinates, selectedPointIndex]);
