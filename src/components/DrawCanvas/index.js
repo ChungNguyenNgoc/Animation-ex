@@ -28,6 +28,19 @@ const DrawCanvas = () => {
       const rect = canvasTarget.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
+      setCoordinates((prev) => {
+        if (prev?.some((it) => it.x === x && it.y === y)) {
+          return [...prev];
+        }
+        return [...prev, { x, y }];
+      });
+    };
+
+    const handleCanvasMousedown = (e) => {
+      const canvasTarget = e.target;
+      const rect = canvasTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
       const clickedPointIndex = coordinates.findIndex((point) => {
         const distance = Math.sqrt(
@@ -38,13 +51,6 @@ const DrawCanvas = () => {
 
       if (clickedPointIndex !== -1) {
         setSelectedPointIndex(clickedPointIndex);
-      } else {
-        setCoordinates((prev) => {
-          if (prev?.some((it) => it.x === x && it.y === y)) {
-            return [...prev];
-          }
-          return [...prev, { x, y }];
-        });
       }
     };
 
@@ -101,10 +107,12 @@ const DrawCanvas = () => {
 
     if (canvas) {
       canvas.addEventListener("click", handleCanvasClick);
+      canvas.addEventListener("mousedown", handleCanvasMousedown);
       canvas.addEventListener("mousemove", handleMouseMove);
       canvas.addEventListener("mouseup", handleMouseUp);
       return () => {
         canvas.removeEventListener("click", handleCanvasClick);
+        canvas.addEventListener("mousedown", handleCanvasMousedown);
         canvas.removeEventListener("mousemove", handleMouseMove);
         canvas.removeEventListener("mouseup", handleMouseUp);
       };
