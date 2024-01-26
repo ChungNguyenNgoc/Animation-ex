@@ -49,7 +49,9 @@ const DrawCanvas = () => {
     };
 
     const handleMouseMove = (e) => {
-      if (selectedPointIndex !== null) {
+      // e.preventDefault();
+      e.stopPropagation();
+      if (selectedPointIndex != null) {
         const canvasTarget = e.target;
         const rect = canvasTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -63,7 +65,9 @@ const DrawCanvas = () => {
       }
     };
 
-    const handleMouseUp = () => {
+    const handleMouseUp = (e) => {
+      // e.preventDefault();
+      // e.stopPropagation();
       setSelectedPointIndex(null);
     };
 
@@ -90,7 +94,9 @@ const DrawCanvas = () => {
           ctx.lineTo(it.x, it.y);
         }
       });
+      ctx.closePath();
       ctx.stroke();
+      ctx.fillStyle = "#ffffff66";
       ctx.fill();
     };
 
