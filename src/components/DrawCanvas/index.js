@@ -43,10 +43,7 @@ const DrawCanvas = () => {
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      if (isPointInsidePolygon(x, y, coordinates)) {
-        console.debug("inside");
-      } else {
-        console.debug("outside");
+      if (!isPointInsidePolygon(x, y, coordinates)) {
         setCoordinates((prev) => {
           if (prev?.some((it) => it.x === x && it.y === y)) {
             return [...prev];
@@ -62,15 +59,19 @@ const DrawCanvas = () => {
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      const clickedPointIndex = coordinates.findIndex((point) => {
-        const distance = Math.sqrt(
-          Math.pow(point.x - x, 2) + Math.pow(point.y - y, 2),
-        );
-        return distance <= 6;
-      });
+      if (isPointInsidePolygon(x, y, coordinates)) {
+        console.debug("inside");
+      } else {
+        const clickedPointIndex = coordinates.findIndex((point) => {
+          const distance = Math.sqrt(
+            Math.pow(point.x - x, 2) + Math.pow(point.y - y, 2),
+          );
+          return distance <= 6;
+        });
 
-      if (clickedPointIndex !== -1) {
-        setSelectedPointIndex(clickedPointIndex);
+        if (clickedPointIndex !== -1) {
+          setSelectedPointIndex(clickedPointIndex);
+        }
       }
     };
 
@@ -130,7 +131,7 @@ const DrawCanvas = () => {
       canvas.addEventListener("mouseup", handleMouseUp);
       return () => {
         canvas.removeEventListener("click", handleCanvasClick);
-        canvas.addEventListener("mousedown", handleCanvasMousedown);
+        canvas.removeEventListener("mousedown", handleCanvasMousedown);
         canvas.removeEventListener("mousemove", handleMouseMove);
         canvas.removeEventListener("mouseup", handleMouseUp);
       };
