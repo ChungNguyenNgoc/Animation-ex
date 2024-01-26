@@ -71,7 +71,6 @@ const DrawCanvas = () => {
 
     const handleMouseUp = (e) => {
       setSelectedPointIndex(null);
-      setCoordinates([...coordinates]);
     };
 
     const drawOnCanvas = () => {
@@ -118,6 +117,9 @@ const DrawCanvas = () => {
       };
     }
   }, [coordinates, selectedPointIndex]);
+
+  console.debug("coordinates: ", coordinates);
+  console.debug("selectedPointIndex: ", selectedPointIndex);
 
   return (
     <div className="draw-canvas">
