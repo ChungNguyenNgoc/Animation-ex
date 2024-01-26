@@ -14,6 +14,10 @@ const DrawCanvas = () => {
     height: null,
   });
 
+  const randomColor = () => {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+  };
+
   const handleImageLoad = (e) => {
     const { naturalWidth, naturalHeight } = e.target;
     setNaturalSize({ width: naturalWidth, height: naturalHeight });
@@ -53,12 +57,12 @@ const DrawCanvas = () => {
     const ctx = canvas.getContext("2d");
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "red";
 
     // Draw a circle at each point
     coordinates.forEach((it) => {
       ctx.beginPath();
       ctx.arc(it.x, it.y, 5, 0, 2 * Math.PI);
+      ctx.fillStyle = randomColor();
       ctx.fill();
     });
 
