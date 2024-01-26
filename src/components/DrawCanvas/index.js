@@ -10,6 +10,7 @@ const DrawCanvas = () => {
     height: null,
   });
   const [selectedPointIndex, setSelectedPointIndex] = useState(null);
+  const [checkPointEvent, setCheckPointEvent] = useState(false);
 
   const randomColor = () => {
     return "#" + Math.floor(Math.random() * 16777215).toString(16);
@@ -76,14 +77,20 @@ const DrawCanvas = () => {
     };
 
     const handleMouseMove = (e) => {
-      if (selectedPointIndex == null) {
-        return;
-      }
       const canvasTarget = e.target;
       const rect = canvasTarget.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
+      if (isPointInsidePolygon(x, y, coordinates)) {
+        setCheckPointEvent(true);
+      } else {
+        setCheckPointEvent(false);
+      }
+
+      if (selectedPointIndex == null) {
+        return;
+      }
       setCoordinates((prevPoints) =>
         prevPoints.map((point, index) =>
           index === selectedPointIndex ? { x, y } : point,
@@ -147,6 +154,7 @@ const DrawCanvas = () => {
           className="draw-canvas_wrap-img_canvasEle"
           width={clientSize.width}
           height={clientSize.height}
+          style={{ cursor: checkPointEvent ? "pointer" : "" }}
         />
       </div>
     </div>
