@@ -72,7 +72,6 @@ const DrawCanvas = () => {
 
       if (isPointInsidePolygon(x, y, coordinates)) {
         setSelectedPointInside({ x, y });
-        // do something
       } else if (handleClickedPointIndex(x, y) !== -1) {
         setSelectedPointIndex(handleClickedPointIndex(x, y));
       }
@@ -100,8 +99,20 @@ const DrawCanvas = () => {
           ),
         );
       }
+
       if (selectedPointInside != null) {
-        // do something
+        const dx = x - selectedPointInside.x;
+        const dy = y - selectedPointInside.y;
+
+        setCoordinates((prevPoints) =>
+          prevPoints.map((point) => {
+            const newX = point?.x + dx;
+            const newY = point?.y + dy;
+
+            return { x: newX, y: newY };
+          }),
+        );
+        setSelectedPointInside({ x, y });
       }
     };
 
@@ -152,7 +163,7 @@ const DrawCanvas = () => {
         canvas.removeEventListener("click", handleCanvasClick);
       };
     }
-  }, [coordinates, selectedPointIndex]);
+  }, [coordinates, selectedPointIndex, selectedPointInside]);
 
   return (
     <div className="draw-canvas">
