@@ -4,6 +4,7 @@ import "./style.scss";
 import QuocHocHue from "./quoc_hoc_hue.jpg";
 
 const DrawCanvas = () => {
+  const radius = 6;
   const [coordinates, setCoordinates] = useState([]);
   const [clientSize, setClientSize] = useState({
     width: null,
@@ -69,7 +70,8 @@ const DrawCanvas = () => {
           const distance = Math.sqrt(
             Math.pow(point.x - x, 2) + Math.pow(point.y - y, 2),
           );
-          return distance <= 6;
+
+          return distance <= radius;
         });
 
         if (clickedPointIndex !== -1) {
@@ -113,7 +115,7 @@ const DrawCanvas = () => {
       // Draw a circle at each point
       coordinates.forEach((it) => {
         ctx.beginPath();
-        ctx.arc(it.x, it.y, 6, 0, 2 * Math.PI);
+        ctx.arc(it.x, it.y, radius, 0, 2 * Math.PI);
         ctx.closePath();
         ctx.fillStyle = randomColor();
         ctx.fill();
