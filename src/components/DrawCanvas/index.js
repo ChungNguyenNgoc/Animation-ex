@@ -112,6 +112,7 @@ const DrawCanvas = () => {
             return { x: newX, y: newY };
           }),
         );
+
         setSelectedPointInside({ x, y });
       }
     };
