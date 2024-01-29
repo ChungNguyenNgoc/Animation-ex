@@ -40,6 +40,14 @@ const DrawCanvas = () => {
       return ctx.isPointInPath(x, y);
     };
 
+    const handleClickedPointIndex = (x, y) =>
+      coordinates.findIndex((point) => {
+        const distance = Math.sqrt(
+          Math.pow(point.x - x, 2) + Math.pow(point.y - y, 2),
+        );
+        return distance <= radius;
+      });
+
     const handleCanvasClick = (e) => {
       const canvasTarget = e.target;
       const rect = canvasTarget.getBoundingClientRect();
@@ -65,18 +73,8 @@ const DrawCanvas = () => {
       if (isPointInsidePolygon(x, y, coordinates)) {
         setSelectedPointInside({ x, y });
         // do something
-      } else {
-        const clickedPointIndex = coordinates.findIndex((point) => {
-          const distance = Math.sqrt(
-            Math.pow(point.x - x, 2) + Math.pow(point.y - y, 2),
-          );
-
-          return distance <= radius;
-        });
-
-        if (clickedPointIndex !== -1) {
-          setSelectedPointIndex(clickedPointIndex);
-        }
+      } else if (handleClickedPointIndex(x, y) !== -1) {
+        setSelectedPointIndex(handleClickedPointIndex(x, y));
       }
     };
 
@@ -86,7 +84,10 @@ const DrawCanvas = () => {
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      if (isPointInsidePolygon(x, y, coordinates)) {
+      if (
+        isPointInsidePolygon(x, y, coordinates) ||
+        handleClickedPointIndex(x, y) !== -1
+      ) {
         setCheckPointEvent(true);
       } else {
         setCheckPointEvent(false);
