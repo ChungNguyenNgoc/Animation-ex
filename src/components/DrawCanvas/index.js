@@ -27,7 +27,7 @@ const DrawCanvas = () => {
     const canvas = document.querySelector("canvas");
     const ctx = canvas.getContext("2d");
 
-    const isPointInsidePolygon = (x, y, vertices) => {
+    const isPointInsidePolygon = (mouseX, mouseY, vertices) => {
       ctx.beginPath();
       vertices.forEach((it, index) => {
         if (index === 0) {
@@ -37,13 +37,13 @@ const DrawCanvas = () => {
         }
       });
       ctx.closePath();
-      return ctx.isPointInPath(x, y);
+      return ctx.isPointInPath(mouseX, mouseY);
     };
 
-    const handleClickedPointIndex = (x, y) =>
+    const handleClickedPointIndex = (mouseX, mouseY) =>
       coordinates.findIndex((it) => {
         const distance = Math.sqrt(
-          Math.pow(it.x - x, 2) + Math.pow(it.y - y, 2),
+          Math.pow(it.x - mouseX, 2) + Math.pow(it.y - mouseY, 2),
         );
         return distance <= radius;
       });
@@ -51,15 +51,15 @@ const DrawCanvas = () => {
     const handleCanvasClick = (e) => {
       const canvasTarget = e.target;
       const rect = canvasTarget.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
 
-      if (!isPointInsidePolygon(x, y, coordinates)) {
+      if (!isPointInsidePolygon(mouseX, mouseY, coordinates)) {
         setCoordinates((prev) => {
-          if (prev?.some((it) => it.x === x && it.y === y)) {
+          if (prev?.some((it) => it.x === mouseX && it.y === mouseY)) {
             return [...prev];
           }
-          return [...prev, { x, y }];
+          return [...prev, { x: mouseX, y: mouseY }];
         });
       }
     };
@@ -67,25 +67,25 @@ const DrawCanvas = () => {
     const handleCanvasMousedown = (e) => {
       const canvasTarget = e.target;
       const rect = canvasTarget.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
 
-      if (isPointInsidePolygon(x, y, coordinates)) {
-        setSelectedPointInside({ x, y });
-      } else if (handleClickedPointIndex(x, y) !== -1) {
-        setSelectedPointIndex(handleClickedPointIndex(x, y));
+      if (isPointInsidePolygon(mouseX, mouseY, coordinates)) {
+        setSelectedPointInside({ x: mouseX, y: mouseY });
+      } else if (handleClickedPointIndex(mouseX, mouseY) !== -1) {
+        setSelectedPointIndex(handleClickedPointIndex(mouseX, mouseY));
       }
     };
 
     const handleMouseMove = (e) => {
       const canvasTarget = e.target;
       const rect = canvasTarget.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
 
       if (
-        isPointInsidePolygon(x, y, coordinates) ||
-        handleClickedPointIndex(x, y) !== -1
+        isPointInsidePolygon(mouseX, mouseY, coordinates) ||
+        handleClickedPointIndex(mouseX, mouseY) !== -1
       ) {
         setCheckPointEvent(true);
       } else {
@@ -95,19 +95,19 @@ const DrawCanvas = () => {
       if (selectedPointIndex != null) {
         setCoordinates((prev) =>
           prev.map((it, index) =>
-            index === selectedPointIndex ? { x, y } : it,
+            index === selectedPointIndex ? { x: mouseX, y: mouseY } : it,
           ),
         );
       }
 
       if (selectedPointInside != null) {
-        const dx = x - selectedPointInside.x;
-        const dy = y - selectedPointInside.y;
+        const dx = mouseX - selectedPointInside.x;
+        const dy = mouseY - selectedPointInside.y;
 
         setCoordinates((prev) =>
           prev.map((it) => ({ x: it?.x + dx, y: it?.y + dy })),
         );
-        setSelectedPointInside({ x, y });
+        setSelectedPointInside({ x: mouseX, y: mouseY });
       }
     };
 
