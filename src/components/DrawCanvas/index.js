@@ -41,9 +41,9 @@ const DrawCanvas = () => {
     };
 
     const handleClickedPointIndex = (x, y) =>
-      coordinates.findIndex((point) => {
+      coordinates.findIndex((it) => {
         const distance = Math.sqrt(
-          Math.pow(point.x - x, 2) + Math.pow(point.y - y, 2),
+          Math.pow(it.x - x, 2) + Math.pow(it.y - y, 2),
         );
         return distance <= radius;
       });
@@ -93,9 +93,9 @@ const DrawCanvas = () => {
       }
 
       if (selectedPointIndex != null) {
-        setCoordinates((prevPoints) =>
-          prevPoints.map((point, index) =>
-            index === selectedPointIndex ? { x, y } : point,
+        setCoordinates((prev) =>
+          prev.map((it, index) =>
+            index === selectedPointIndex ? { x, y } : it,
           ),
         );
       }
@@ -104,15 +104,9 @@ const DrawCanvas = () => {
         const dx = x - selectedPointInside.x;
         const dy = y - selectedPointInside.y;
 
-        setCoordinates((prevPoints) =>
-          prevPoints.map((point) => {
-            const newX = point?.x + dx;
-            const newY = point?.y + dy;
-
-            return { x: newX, y: newY };
-          }),
+        setCoordinates((prev) =>
+          prev.map((it) => ({ x: it?.x + dx, y: it?.y + dy })),
         );
-
         setSelectedPointInside({ x, y });
       }
     };
