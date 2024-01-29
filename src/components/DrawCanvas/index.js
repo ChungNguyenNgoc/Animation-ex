@@ -160,8 +160,27 @@ const DrawCanvas = () => {
     }
   }, [coordinates, selectedPointIndex, selectedPointInside]);
 
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.ctrlKey && e.key === "z") {
+        handleRemove();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyPress);
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [coordinates]);
+
+  const handleRemove = () => {
+    setCoordinates((prev) => prev.slice(0, -1));
+  };
+
   return (
     <div className="draw-canvas">
+      <button onClick={handleRemove}>Remove</button>
+      <button onClick={() => setCoordinates([])}>Reset</button>
       <div className="draw-canvas_wrap-img">
         <img src={QuocHocHue} alt="QuocHocHue" onLoad={handleImageLoad} />
         <canvas
