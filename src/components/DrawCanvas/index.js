@@ -101,11 +101,23 @@ const DrawCanvas = () => {
       }
 
       if (selectedPointInside != null) {
+        // for (let i = 0; i < coordinates.length; i++) {
+        //   if (
+        //     coordinates[i].x <= 0 ||
+        //     coordinates[i].x >= clientSize.width ||
+        //     coordinates[i].y <= 0 ||
+        //     coordinates[i].y >= clientSize.height
+        //   ) {
+        //   }
+        // }
         const dx = mouseX - selectedPointInside.x;
         const dy = mouseY - selectedPointInside.y;
 
         setCoordinates((prev) =>
-          prev.map((it) => ({ x: it?.x + dx, y: it?.y + dy })),
+          prev.map((it) => ({
+            x: Math.max(0, Math.min(canvas.width, it?.x + dx)),
+            y: Math.max(0, Math.min(canvas.height, it?.y + dy)),
+          })),
         );
         setSelectedPointInside({ x: mouseX, y: mouseY });
       }
@@ -158,7 +170,7 @@ const DrawCanvas = () => {
         canvas.removeEventListener("click", handleCanvasClick);
       };
     }
-  }, [coordinates, selectedPointIndex, selectedPointInside]);
+  }, [clientSize, coordinates, selectedPointIndex, selectedPointInside]);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
