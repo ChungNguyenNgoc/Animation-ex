@@ -70,10 +70,10 @@ const DrawCanvas = () => {
       const mouseX = e.clientX - rect.left;
       const mouseY = e.clientY - rect.top;
 
-      if (isPointInsidePolygon(mouseX, mouseY, coordinates)) {
-        setSelectedPointInside({ x: mouseX, y: mouseY });
-      } else if (handleClickedPointIndex(mouseX, mouseY) !== -1) {
+      if (handleClickedPointIndex(mouseX, mouseY) !== -1) {
         setSelectedPointIndex(handleClickedPointIndex(mouseX, mouseY));
+      } else if (isPointInsidePolygon(mouseX, mouseY, coordinates)) {
+        setSelectedPointInside({ x: mouseX, y: mouseY });
       }
     };
 
@@ -119,15 +119,6 @@ const DrawCanvas = () => {
     (function drawOnCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw a circle at each point
-      coordinates.forEach((it) => {
-        ctx.beginPath();
-        ctx.arc(it.x, it.y, radius, 0, 2 * Math.PI);
-        ctx.closePath();
-        ctx.fillStyle = randomColor();
-        ctx.fill();
-      });
-
       // Draw lines connecting the points
       ctx.strokeStyle = randomColor();
       ctx.lineWidth = 2;
@@ -143,6 +134,15 @@ const DrawCanvas = () => {
       ctx.stroke();
       ctx.fillStyle = "#ffffff66";
       ctx.fill();
+
+      // Draw a circle at each point
+      coordinates.forEach((it) => {
+        ctx.beginPath();
+        ctx.arc(it.x, it.y, radius, 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.fillStyle = randomColor();
+        ctx.fill();
+      });
     })();
 
     if (canvas) {
