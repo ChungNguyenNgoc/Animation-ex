@@ -101,23 +101,44 @@ const DrawCanvas = () => {
       }
 
       if (selectedPointInside != null) {
-        // for (let i = 0; i < coordinates.length; i++) {
-        //   if (
-        //     coordinates[i].x <= 0 ||
-        //     coordinates[i].x >= clientSize.width ||
-        //     coordinates[i].y <= 0 ||
-        //     coordinates[i].y >= clientSize.height
-        //   ) {
-        //   }
-        // }
         const dx = mouseX - selectedPointInside.x;
         const dy = mouseY - selectedPointInside.y;
 
+        // for (let i = 0; i < coordinates.length; i++) {
+        //   if (
+        //     coordinates[i].x <= 0 ||
+        //     coordinates[i].x >= canvas.width ||
+        //     coordinates[i].y <= 0 ||
+        //     coordinates[i].y >= canvas.height
+        //   ) {
+        //   }
+        // }
+
+        // const isInsideCanvas = coordinates.every(
+        //   (it) =>
+        //     it.x >= 0 &&
+        //     it.x <= canvas.width &&
+        //     it.y >= 0 &&
+        //     it.y <= canvas.height,
+        // );
+
+        // setCoordinates((prev) =>
+        //   prev.map((it) => ({
+        //     x: Math.max(0, Math.min(canvas.width, it?.x + dx)),
+        //     y: Math.max(0, Math.min(canvas.height, it?.y + dy)),
+        //   })),
+        // );
+        // setSelectedPointInside({ x: mouseX, y: mouseY });
+
+        // if (isInsideCanvas) {
+        //   setCoordinates((prev) =>
+        //     prev.map((it) => ({ x: it?.x + dx, y: it?.y + dy })),
+        //   );
+        //   setSelectedPointInside({ x: mouseX, y: mouseY });
+        // }
+
         setCoordinates((prev) =>
-          prev.map((it) => ({
-            x: Math.max(0, Math.min(canvas.width, it?.x + dx)),
-            y: Math.max(0, Math.min(canvas.height, it?.y + dy)),
-          })),
+          prev.map((it) => ({ x: it?.x + dx, y: it?.y + dy })),
         );
         setSelectedPointInside({ x: mouseX, y: mouseY });
       }
