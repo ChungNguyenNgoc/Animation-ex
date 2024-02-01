@@ -104,43 +104,32 @@ const DrawCanvas = () => {
         const dx = mouseX - selectedPointInside.x;
         const dy = mouseY - selectedPointInside.y;
 
-        // setCoordinates((prev) =>
-        //   prev.map((it) => ({
-        //     x: Math.max(0, Math.min(canvas.width, it?.x + dx)),
-        //     y: Math.max(0, Math.min(canvas.height, it?.y + dy)),
-        //   })),
-        // );
-        // setSelectedPointInside({ x: mouseX, y: mouseY });
+        const boundingBox = {
+          minX: Math.min(...coordinates.map((it) => it.x)),
+          minY: Math.min(...coordinates.map((it) => it.y)),
+          maxX: Math.max(...coordinates.map((it) => it.x)),
+          maxY: Math.max(...coordinates.map((it) => it.y)),
+        };
 
-        const isOutsideX = coordinates.some(
-          (it) => it.x <= 0 || it.x >= canvas.width,
-        );
+        // Check if moving the shape will keep it within the canvas boundaries
+        const newBoundingBox = {
+          minX: boundingBox.minX + dx,
+          minY: boundingBox.minY + dy,
+          maxX: boundingBox.maxX + dx,
+          maxY: boundingBox.maxY + dy,
+        };
 
-        const isOutsideY = coordinates.some(
-          (it) => it.y <= 0 || it.y >= canvas.height,
-        );
-
-        // if (isOutsideX) {
-        //   setCoordinates((prev) =>
-        //     prev.map((it) => {
-        //       return { x: it.x, y: it.y + dy };
-        //     }),
-        //   );
-        //   setSelectedPointInside({ x: mouseX, y: mouseY });
-        //   return;
-        // }
-        // if (isOutsideY) {
-        //   setCoordinates((prev) =>
-        //     prev.map((it) => ({ x: it.x + dx, y: it.y })),
-        //   );
-        //   setSelectedPointInside({ x: mouseX, y: mouseY });
-        //   return;
-        // }
-
-        setCoordinates((prev) =>
-          prev.map((it) => ({ x: it.x + dx, y: it.y + dy })),
-        );
-        setSelectedPointInside({ x: mouseX, y: mouseY });
+        if (
+          newBoundingBox.minX >= 0 &&
+          newBoundingBox.minY >= 0 &&
+          newBoundingBox.maxX <= canvas.width &&
+          newBoundingBox.maxY <= canvas.height
+        ) {
+          setCoordinates((prev) =>
+            prev.map((it) => ({ x: it.x + dx, y: it.y + dy })),
+          );
+          setSelectedPointInside({ x: mouseX, y: mouseY });
+        }
       }
     };
 
