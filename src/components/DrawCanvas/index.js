@@ -111,13 +111,6 @@ const DrawCanvas = () => {
           maxY: Math.max(...coordinates.map((it) => it.y)),
         };
 
-        const listBoundingBox = {
-          minX: coordinates.filter((it) => it.x === boundingBox.minX),
-          minY: coordinates.filter((it) => it.y === boundingBox.minY),
-          maxX: coordinates.filter((it) => it.x === boundingBox.maxX),
-          maxY: coordinates.filter((it) => it.y === boundingBox.maxY),
-        };
-
         // Check if moving the shape will keep it within the canvas boundaries
         const newBoundingBox = {
           minX: boundingBox.minX + dx,
@@ -125,11 +118,6 @@ const DrawCanvas = () => {
           maxX: boundingBox.maxX + dx,
           maxY: boundingBox.maxY + dy,
         };
-
-        console.debug("boundingBox: ", boundingBox);
-        console.debug("listBoundingBox: ", listBoundingBox);
-        console.debug("newBoundingBox: ", newBoundingBox);
-        console.debug("coordinates: ", coordinates);
 
         if (
           newBoundingBox.minX >= 0 &&
@@ -141,9 +129,40 @@ const DrawCanvas = () => {
             prev.map((it) => ({ x: it.x + dx, y: it.y + dy })),
           );
           setSelectedPointInside({ x: mouseX, y: mouseY });
-        } else if (newBoundingBox.minX <= 0) {
+        } else if (
+          newBoundingBox.minX <= 0 &&
+          newBoundingBox.minY >= 0 &&
+          newBoundingBox.maxY <= canvas.height
+        ) {
           setCoordinates((prev) =>
             prev.map((it) => ({ x: it.x, y: it.y + dy })),
+          );
+          setSelectedPointInside({ x: mouseX, y: mouseY });
+        } else if (
+          newBoundingBox.maxX >= canvas.width &&
+          newBoundingBox.minY >= 0 &&
+          newBoundingBox.maxY <= canvas.height
+        ) {
+          setCoordinates((prev) =>
+            prev.map((it) => ({ x: it.x, y: it.y + dy })),
+          );
+          setSelectedPointInside({ x: mouseX, y: mouseY });
+        } else if (
+          newBoundingBox.minY <= 0 &&
+          newBoundingBox.minX >= 0 &&
+          newBoundingBox.maxX <= canvas.width
+        ) {
+          setCoordinates((prev) =>
+            prev.map((it) => ({ x: it.x + dx, y: it.y })),
+          );
+          setSelectedPointInside({ x: mouseX, y: mouseY });
+        } else if (
+          newBoundingBox.maxY >= canvas.height &&
+          newBoundingBox.minX >= 0 &&
+          newBoundingBox.maxX <= canvas.width
+        ) {
+          setCoordinates((prev) =>
+            prev.map((it) => ({ x: it.x + dx, y: it.y })),
           );
           setSelectedPointInside({ x: mouseX, y: mouseY });
         }
