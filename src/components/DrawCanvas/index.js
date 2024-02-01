@@ -130,36 +130,24 @@ const DrawCanvas = () => {
           );
           setSelectedPointInside({ x: mouseX, y: mouseY });
         } else if (
-          newBoundingBox.minX <= 0 &&
-          newBoundingBox.minY >= 0 &&
-          newBoundingBox.maxY <= canvas.height
+          (newBoundingBox.minX <= 0 &&
+            newBoundingBox.minY >= 0 &&
+            newBoundingBox.maxY <= canvas.height) ||
+          (newBoundingBox.maxX >= canvas.width &&
+            newBoundingBox.minY >= 0 &&
+            newBoundingBox.maxY <= canvas.height)
         ) {
           setCoordinates((prev) =>
             prev.map((it) => ({ x: it.x, y: it.y + dy })),
           );
           setSelectedPointInside({ x: mouseX, y: mouseY });
         } else if (
-          newBoundingBox.maxX >= canvas.width &&
-          newBoundingBox.minY >= 0 &&
-          newBoundingBox.maxY <= canvas.height
-        ) {
-          setCoordinates((prev) =>
-            prev.map((it) => ({ x: it.x, y: it.y + dy })),
-          );
-          setSelectedPointInside({ x: mouseX, y: mouseY });
-        } else if (
-          newBoundingBox.minY <= 0 &&
-          newBoundingBox.minX >= 0 &&
-          newBoundingBox.maxX <= canvas.width
-        ) {
-          setCoordinates((prev) =>
-            prev.map((it) => ({ x: it.x + dx, y: it.y })),
-          );
-          setSelectedPointInside({ x: mouseX, y: mouseY });
-        } else if (
-          newBoundingBox.maxY >= canvas.height &&
-          newBoundingBox.minX >= 0 &&
-          newBoundingBox.maxX <= canvas.width
+          (newBoundingBox.minY <= 0 &&
+            newBoundingBox.minX >= 0 &&
+            newBoundingBox.maxX <= canvas.width) ||
+          (newBoundingBox.maxY >= canvas.height &&
+            newBoundingBox.minX >= 0 &&
+            newBoundingBox.maxX <= canvas.width)
         ) {
           setCoordinates((prev) =>
             prev.map((it) => ({ x: it.x + dx, y: it.y })),
