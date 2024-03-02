@@ -18,6 +18,7 @@ import LoadingAnimate from "./components/LoadingAnimate";
 import Heart from "./components/Heart";
 import AppleAnimation from "./components/AppleAnimation";
 import DrawCanvas from "./components/DrawCanvas";
+import PolygonCheck from "./components/PolygonCheck";
 
 function App() {
   return (
@@ -40,7 +41,8 @@ function App() {
       {/* <LoadingAnimate /> */}
       {/* <Heart /> */}
       {/* <AppleAnimation /> */}
-      <DrawCanvas />
+      {/* <DrawCanvas /> */}
+      <PolygonCheck />
     </div>
   );
 }
