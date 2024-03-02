@@ -3,6 +3,12 @@ import "./style.scss";
 
 const PolygonCheck = () => {
   // Add event listener on component mount
+  const points = [
+    { x: 200, y: 10 },
+    { x: 250, y: 190 },
+    { x: 160, y: 210 },
+  ];
+
   React.useEffect(() => {
     const svg = document.getElementById("svg-id");
     const polygon = document.getElementById("polygon-id");
@@ -47,7 +53,7 @@ const PolygonCheck = () => {
       <svg id="svg-id" height="1000" width="1000">
         <polygon
           id="polygon-id"
-          points="100,10 40,198 190,78 10,78 160,198"
+          points="200,10 250,190 160,210"
           style={{
             fill: "lime",
             stroke: "purple",
@@ -55,6 +61,9 @@ const PolygonCheck = () => {
             fillRule: "evenodd",
           }}
         />
+        {points.map((point, index) => (
+          <circle key={index} cx={point.x} cy={point.y} r={5} fill="red" />
+        ))}
       </svg>
     </div>
   );
