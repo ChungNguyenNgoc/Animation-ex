@@ -18,6 +18,7 @@ import LoadingAnimate from "./components/LoadingAnimate";
 import Heart from "./components/Heart";
 import AppleAnimation from "./components/AppleAnimation";
 import PolygonCanvas from "./components/PolygonCanvas";
+import WebRTCComponent from "./components/WebRTCComponent";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
       {/* <Heart /> */}
       {/* <AppleAnimation /> */}
       {/* <PolygonCanvas /> */}
+      <WebRTCComponent />
     </div>
   );
 }
