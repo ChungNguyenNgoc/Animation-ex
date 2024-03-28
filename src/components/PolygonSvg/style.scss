@@ -1,0 +1,172 @@
+.capture-camera-by-svg {
+  width: 100%;
+  border-radius: 0.8rem;
+  background: var(--colorWhite);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+
+  &_content {
+    width: 100%;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    &_actions {
+      width: 100%;
+
+      &_wrap-draw {
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+        z-index: 1;
+
+        &_wrap-svg {
+          position: absolute;
+          user-select: none;
+
+          img {
+            display: block;
+            position: absolute;
+            width: 100%;
+            object-fit: contain;
+            z-index: 99;
+            user-select: none;
+            pointer-events: none;
+          }
+
+          svg {
+            display: block;
+            position: absolute;
+            z-index: 999;
+            background: transparent;
+            user-select: none;
+            pointer-events: none;
+          }
+        }
+        &_direction {
+          position: absolute;
+          z-index: 999999;
+
+          &_target {
+            transition: all 1s;
+            position: absolute;
+            background: #f62323;
+            width: 0.5rem;
+            left: calc(-0.5rem / 2);
+            height: 15rem;
+            top: calc(-15rem / 2);
+            border-radius: 1rem;
+            transform: rotate(-0deg);
+
+            &::after,
+            &::before {
+              display: block;
+              content: "";
+              position: absolute;
+              background: #f62323;
+              border-radius: 1rem;
+              width: 0.5rem;
+              height: 3rem;
+              top: -0.8rem;
+            }
+
+            &::after {
+              left: -1rem;
+              transform: rotate(45deg);
+            }
+
+            &::before {
+              left: 1rem;
+              transform: rotate(-45deg);
+            }
+
+            &.rotate {
+              transform: rotate(-180deg);
+            }
+          }
+
+          &_action {
+            display: flex;
+            position: absolute;
+            top: -2rem;
+            left: -1.5rem;
+            width: 3rem;
+            height: 3rem;
+            background: #f62323;
+            border-radius: 50%;
+            z-index: 9999;
+            cursor: pointer;
+
+            span {
+              display: block;
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+
+    &_features {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3.6rem;
+
+      &_icon {
+        width: 7rem;
+        height: 4.2rem;
+        background: var(--colorWhite);
+        border-radius: 0.8rem;
+        border: 1px solid #666;
+        display: flex;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        span {
+          display: block;
+          margin: auto;
+
+          svg {
+            stroke: #666;
+          }
+        }
+
+        &:hover {
+          background: #ff7506 !important;
+          border: 1px solid #ff7506 !important;
+
+          svg {
+            stroke: var(--colorWhite);
+          }
+
+          .pen-icon {
+            svg {
+              stroke: transparent;
+              fill: var(--colorWhite);
+            }
+          }
+        }
+      }
+
+      &_icon.active-icon {
+        background: #ff7506 !important;
+        border: 1px solid #ff7506 !important;
+
+        .pen-icon {
+          svg {
+            stroke: transparent;
+            fill: var(--colorWhite);
+          }
+        }
+      }
+
+      .pen-icon {
+        svg {
+          stroke: transparent;
+          fill: #666;
+        }
+      }
+    }
+  }
+}

@@ -18,7 +18,6 @@ import LoadingAnimate from "./components/LoadingAnimate";
 import Heart from "./components/Heart";
 import AppleAnimation from "./components/AppleAnimation";
 import PolygonCanvas from "./components/PolygonCanvas";
-import PolygonCheck from "./components/PolygonCheck";
 
 function App() {
   return (
