@@ -30,12 +30,13 @@ const WebRTCComponent = () => {
         audio: true,
         video: true,
       });
-      if (videoRef.current != null) {
-        videoRef.current.srcObject = stream;
-      }
       stream
         .getTracks()
         .forEach((track) => peerConnectionRef.current.addTrack(track, stream));
+
+      if (videoRef.current != null) {
+        videoRef.current.srcObject = stream;
+      }
     } catch (e) {
       console.error("Error accessing media devices:", e);
     }
