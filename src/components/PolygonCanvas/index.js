@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./style.scss";
 import QuocHocHue from "./quoc_hoc_hue.jpg";
 
-const DrawCanvas = () => {
+const PolygonCanvas = () => {
   const radius = 6;
   const [coordinates, setCoordinates] = useState([]);
   const [clientSize, setClientSize] = useState({
@@ -241,4 +241,4 @@ const DrawCanvas = () => {
   );
 };
 
-export default DrawCanvas;
+export default PolygonCanvas;

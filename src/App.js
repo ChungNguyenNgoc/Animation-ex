@@ -17,7 +17,7 @@ import WaterDrops from "./components/WaterDrops";
 import LoadingAnimate from "./components/LoadingAnimate";
 import Heart from "./components/Heart";
 import AppleAnimation from "./components/AppleAnimation";
-import DrawCanvas from "./components/DrawCanvas";
+import PolygonCanvas from "./components/PolygonCanvas";
 import PolygonCheck from "./components/PolygonCheck";
 
 function App() {
@@ -41,8 +41,7 @@ function App() {
       {/* <LoadingAnimate /> */}
       {/* <Heart /> */}
       {/* <AppleAnimation /> */}
-      {/* <DrawCanvas /> */}
-      <PolygonCheck />
+      {/* <PolygonCanvas /> */}
     </div>
   );
 }
