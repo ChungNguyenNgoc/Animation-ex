@@ -19,6 +19,7 @@ import Heart from "./components/Heart";
 import AppleAnimation from "./components/AppleAnimation";
 import PolygonCanvas from "./components/PolygonCanvas";
 import WebRTCComponent from "./components/WebRTCComponent";
+import CaptureScreenshot from "./components/CaptureScreenshot";
 
 function App() {
   return (
@@ -42,7 +43,8 @@ function App() {
       {/* <Heart /> */}
       {/* <AppleAnimation /> */}
       {/* <PolygonCanvas /> */}
-      <WebRTCComponent />
+      {/* <WebRTCComponent /> */}
+      <CaptureScreenshot />
     </div>
   );
 }
