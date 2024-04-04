@@ -28,6 +28,12 @@ const CaptureScreenshot = () => {
         <div className="capture-screenshot_ref_item">
           <span>Chung NguyenNgoc</span>
           <img src={QuocHocHue} alt="image" />
+          <svg height={220} width={500} xmlns="http://www.w3.org/2000/svg">
+            <polygon
+              points="100,10 150,190 50,190"
+              style={{ fill: "lime", stroke: "purple", strokeWidth: 3 }}
+            />
+          </svg>
         </div>
       </div>
       <button onClick={captureScreenshot}>Capture Screenshot</button>
