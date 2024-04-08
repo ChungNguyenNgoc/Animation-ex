@@ -3,14 +3,13 @@
   height: 100vh;
   background: rgb(201, 244, 255);
   position: relative;
+  overflow: hidden;
 
   &_ref {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35rem;
-    height: 25rem;
     background: red;
     border-radius: 1.5rem;
     border: 5px solid blue;

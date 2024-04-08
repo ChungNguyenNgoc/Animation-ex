@@ -15,11 +15,13 @@ const CaptureScreenshot = () => {
       return;
     }
 
-    html2canvas(divElement).then((canvas) => {
+    html2canvas(divElement, { scale: 0.5 }).then((canvas) => {
+      console.debug("canvas: ", canvas);
+
       const base64Url = canvas.toDataURL("image/png");
       setImageUrl(base64Url);
-      // const newWindow = window.open();
-      // newWindow.document.write('<img src="' + base64Url + '" />');
+      const newWindow = window.open();
+      newWindow.document.write('<img src="' + base64Url + '" />');
     });
   };
 
@@ -50,7 +52,11 @@ const CaptureScreenshot = () => {
 
   return (
     <div className="capture-screenshot">
-      <div ref={divRef} className="capture-screenshot_ref">
+      <div
+        ref={divRef}
+        style={{ width: 700, height: 400 }}
+        className="capture-screenshot_ref"
+      >
         <div className="capture-screenshot_ref_item">
           <span>Chung NguyenNgoc</span>
           <img src={QuocHocHue} alt="image" />
