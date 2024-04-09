@@ -21,6 +21,7 @@ import PolygonCanvas from "./components/PolygonCanvas";
 import WebRTCComponent from "./components/WebRTCComponent";
 import CaptureScreenshot from "./components/CaptureScreenshot";
 import ClickAnimation from "./components/ClickAnimation";
+import GlowEffects from "./components/GlowEffects";
 
 function App() {
   return (
@@ -46,7 +47,8 @@ function App() {
       {/* <PolygonCanvas /> */}
       {/* <WebRTCComponent /> */}
       {/* <CaptureScreenshot /> */}
-      <ClickAnimation />
+      {/* <ClickAnimation /> */}
+      <GlowEffects />
     </div>
   );
 }
