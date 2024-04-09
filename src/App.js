@@ -20,6 +20,7 @@ import AppleAnimation from "./components/AppleAnimation";
 import PolygonCanvas from "./components/PolygonCanvas";
 import WebRTCComponent from "./components/WebRTCComponent";
 import CaptureScreenshot from "./components/CaptureScreenshot";
+import ClickAnimation from "./components/ClickAnimation";
 
 function App() {
   return (
@@ -44,7 +45,8 @@ function App() {
       {/* <AppleAnimation /> */}
       {/* <PolygonCanvas /> */}
       {/* <WebRTCComponent /> */}
-      <CaptureScreenshot />
+      {/* <CaptureScreenshot /> */}
+      <ClickAnimation />
     </div>
   );
 }
