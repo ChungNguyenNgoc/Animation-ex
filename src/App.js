@@ -22,6 +22,7 @@ import WebRTCComponent from "./components/WebRTCComponent";
 import CaptureScreenshot from "./components/CaptureScreenshot";
 import ClickAnimation from "./components/ClickAnimation";
 import GlowEffects from "./components/GlowEffects";
+import WebcamChat from "./components/WebcamChat";
 
 function App() {
   return (
@@ -48,7 +49,8 @@ function App() {
       {/* <WebRTCComponent /> */}
       {/* <CaptureScreenshot /> */}
       {/* <ClickAnimation /> */}
-      <GlowEffects />
+      {/* <GlowEffects /> */}
+      <WebcamChat />
     </div>
   );
 }

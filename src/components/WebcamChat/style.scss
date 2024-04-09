@@ -1,0 +1,10 @@
+.webcam-chat {
+  width: 100%;
+  height: 100vh;
+  background: rgb(169, 242, 255);
+  display: flex;
+
+  &_wrap-video {
+    margin: auto;
+  }
+}
