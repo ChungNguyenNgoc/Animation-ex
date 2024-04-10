@@ -8,8 +8,6 @@ function WebcamStream() {
   const [recordedChunks, setRecordedChunks] = useState([]);
   const [isRecording, setIsRecording] = useState(false);
 
-  console.debug("recordedChunks: ", recordedChunks);
-
   useEffect(() => {
     (async function initWebcam() {
       try {
