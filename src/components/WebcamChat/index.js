@@ -6,6 +6,7 @@ function WebcamStream() {
   const peerRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const [recordedChunks, setRecordedChunks] = useState([]);
+  const [isRecording, setIsRecording] = useState(false);
 
   console.debug("recordedChunks: ", recordedChunks);
 
@@ -54,24 +55,48 @@ function WebcamStream() {
     })();
   }, []);
 
-  const stopRecording = () => {
-    mediaRecorderRef.current.stop();
-  };
-
   const handleDataAvailable = (e) => {
-    if (e.data.size > 0) {
-      mediaRecorderRef.current.stop();
+    if (e.data != null && e.data.size != null && e.data.size > 0) {
       setRecordedChunks((prev) => [...prev, e.data]);
     }
   };
 
   const startRecording = () => {
-    mediaRecorderRef.current = new MediaRecorder(webcamRef.current.srcObject);
-    mediaRecorderRef.current.addEventListener(
-      "dataavailable",
-      handleDataAvailable,
-    );
-    mediaRecorderRef.current.start();
+    const stream = webcamRef.current.srcObject;
+    if (stream != null) {
+      mediaRecorderRef.current = new MediaRecorder(stream);
+      mediaRecorderRef.current.addEventListener(
+        "dataavailable",
+        handleDataAvailable,
+      );
+      mediaRecorderRef.current.start();
+      setIsRecording(true);
+    }
+  };
+
+  const stopRecording = () => {
+    if (
+      mediaRecorderRef.current != null &&
+      mediaRecorderRef.current.state === "recording"
+    ) {
+      mediaRecorderRef.current.stop();
+      setIsRecording(false);
+    }
+  };
+
+  const downloadRecording = () => {
+    if (recordedChunks.length === 0) {
+      return;
+    }
+
+    const blob = new Blob(recordedChunks, { type: "video/webm" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "recorded-video.webm";
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL();
   };
 
   return (
@@ -79,8 +104,14 @@ function WebcamStream() {
       <div className="webcam-chat_wrap-video">
         <video ref={webcamRef} autoPlay playsInline width={960} height={540} />
         <div>
-          <button onClick={startRecording}>Start Recording</button>
-          <button onClick={stopRecording}>Stop Recording</button>
+          {!isRecording ? (
+            <button onClick={startRecording}>Start Recording</button>
+          ) : (
+            <button onClick={stopRecording}>Stop Recording</button>
+          )}
+          <button onClick={downloadRecording} disabled={!recordedChunks.length}>
+            Download Recording
+          </button>
         </div>
       </div>
     </div>
