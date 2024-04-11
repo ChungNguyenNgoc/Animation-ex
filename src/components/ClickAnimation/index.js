@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.scss";
 
 const ClickAnimation = () => {
+  const [count, setCount] = useState(0);
+
   useEffect(() => {
     let clickElement = document.getElementById("click-animation-id");
     if (clickElement != null) {
@@ -24,19 +26,16 @@ const ClickAnimation = () => {
             }
           }
 
-          const time = setTimeout(() => {
+          setTimeout(() => {
             spark.remove();
           }, 1000);
-
-          return () => {
-            clearTimeout(time);
-          };
         }
       };
 
       clickElement.addEventListener("click", handleBodyClick);
 
       return () => {
+        console.debug("clean up event");
         clickElement.removeEventListener("click", handleBodyClick);
       };
     }

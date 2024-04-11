@@ -48,9 +48,9 @@ function App() {
       {/* <PolygonCanvas /> */}
       {/* <WebRTCComponent /> */}
       {/* <CaptureScreenshot /> */}
-      {/* <ClickAnimation /> */}
+      <ClickAnimation />
       {/* <GlowEffects /> */}
-      <WebcamChat />
+      {/* <WebcamChat /> */}
     </div>
   );
 }
