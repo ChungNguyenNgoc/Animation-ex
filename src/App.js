@@ -39,7 +39,7 @@ function App() {
       {/* <SpinAnimate /> */}
       {/* <AvatarMovie /> */}
       {/* <CreativeStudio /> */}
-      {/* <BorderAnimation /> */}
+      <BorderAnimation />
       {/* <RotatingSlider /> */}
       {/* <WaterDrops /> */}
       {/* <LoadingAnimate /> */}
@@ -48,7 +48,7 @@ function App() {
       {/* <PolygonCanvas /> */}
       {/* <WebRTCComponent /> */}
       {/* <CaptureScreenshot /> */}
-      <ClickAnimation />
+      {/* <ClickAnimation /> */}
       {/* <GlowEffects /> */}
       {/* <WebcamChat /> */}
     </div>
