@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./style.scss";
 
 const ClickAnimation = () => {
-  const [count, setCount] = useState(0);
-
   useEffect(() => {
     let clickElement = document.getElementById("click-animation-id");
     if (clickElement != null) {
