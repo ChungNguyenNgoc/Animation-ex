@@ -25,6 +25,7 @@ import GlowEffects from "./components/GlowEffects";
 import WebcamChat from "./components/WebcamChat";
 import RealGlassCard from "./components/RealGlassCard";
 import CardHover from "./components/CardHover";
+import ParallaxCard from "./components/ParallaxCard";
 
 function App() {
   return (
@@ -54,7 +55,8 @@ function App() {
       {/* <GlowEffects /> */}
       {/* <WebcamChat /> */}
       {/* <RealGlassCard /> */}
-      <CardHover />
+      {/* <CardHover /> */}
+      <ParallaxCard />
     </div>
   );
 }
