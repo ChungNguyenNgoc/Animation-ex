@@ -23,6 +23,7 @@ import CaptureScreenshot from "./components/CaptureScreenshot";
 import ClickAnimation from "./components/ClickAnimation";
 import GlowEffects from "./components/GlowEffects";
 import WebcamChat from "./components/WebcamChat";
+import RealGlassCard from "./components/RealGlassmorphismCard";
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
       {/* <SpinAnimate /> */}
       {/* <AvatarMovie /> */}
       {/* <CreativeStudio /> */}
-      <BorderAnimation />
+      {/* <BorderAnimation /> */}
       {/* <RotatingSlider /> */}
       {/* <WaterDrops /> */}
       {/* <LoadingAnimate /> */}
@@ -51,6 +52,7 @@ function App() {
       {/* <ClickAnimation /> */}
       {/* <GlowEffects /> */}
       {/* <WebcamChat /> */}
+      <RealGlassCard />
     </div>
   );
 }
