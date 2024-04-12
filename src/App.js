@@ -23,7 +23,7 @@ import CaptureScreenshot from "./components/CaptureScreenshot";
 import ClickAnimation from "./components/ClickAnimation";
 import GlowEffects from "./components/GlowEffects";
 import WebcamChat from "./components/WebcamChat";
-import RealGlassCard from "./components/RealGlassmorphismCard";
+import RealGlassCard from "./components/RealGlassCard";
 
 function App() {
   return (
