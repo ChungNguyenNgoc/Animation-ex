@@ -24,6 +24,7 @@ import ClickAnimation from "./components/ClickAnimation";
 import GlowEffects from "./components/GlowEffects";
 import WebcamChat from "./components/WebcamChat";
 import RealGlassCard from "./components/RealGlassCard";
+import CardHover from "./components/CardHover";
 
 function App() {
   return (
@@ -52,7 +53,8 @@ function App() {
       {/* <ClickAnimation /> */}
       {/* <GlowEffects /> */}
       {/* <WebcamChat /> */}
-      <RealGlassCard />
+      {/* <RealGlassCard /> */}
+      <CardHover />
     </div>
   );
 }

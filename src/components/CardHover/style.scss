@@ -1,0 +1,116 @@
+.card-hover-container {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding-block: 5rem;
+  background: #79e4ff;
+
+  &_wrap {
+    display: grid;
+    row-gap: 5rem;
+
+    &_article {
+      position: relative;
+      overflow: hidden;
+
+      &:hover .card-hover-container_wrap_article_data {
+        animation: show-data 1s forwards;
+        opacity: 1;
+        transition: opacity 0.3s;
+      }
+
+      &:hover {
+        animation: remove-overflow 2s forwards;
+      }
+
+      &:not(:hover) {
+        animation: show-overflow 2s forwards;
+      }
+
+      &:not(:hover) .card-hover-container_wrap_article_data {
+        animation: remove-data 1s forwards;
+      }
+
+      @keyframes show-data {
+        50% {
+          transform: translateY(-13rem);
+        }
+        100% {
+          transform: translateY(-7rem);
+        }
+      }
+
+      @keyframes remove-overflow {
+        to {
+          overflow: initial;
+        }
+      }
+
+      @keyframes show-overflow {
+        0% {
+          overflow: initial;
+          pointer-events: none;
+        }
+        50% {
+          overflow: hidden;
+        }
+      }
+
+      @keyframes remove-data {
+        0% {
+          transform: translateY(-7rem);
+        }
+        50% {
+          transform: translateY(-13rem);
+        }
+        100% {
+          transform: translateY(0.5rem);
+        }
+      }
+
+      img {
+        width: 328px;
+        height: 100%;
+        border-radius: 1.5rem;
+      }
+
+      &_data {
+        position: absolute;
+        width: 280px;
+        background: #fff;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+        border-radius: 1rem;
+        bottom: -11rem;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        opacity: 0;
+        transition: opacity 1s 1s;
+
+        &_desc {
+          display: block;
+          font-size: 1.2rem;
+          margin-bottom: 0.25rem;
+        }
+
+        &_title {
+          font-size: 1.6rem;
+          font-weight: 700;
+          margin-bottom: 0.75rem;
+        }
+
+        &_btn {
+          text-decoration: none;
+          font-size: 1.2rem;
+          font-weight: 700;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
