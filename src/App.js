@@ -18,11 +18,11 @@ import LoadingAnimate from "./components/LoadingAnimate";
 import Heart from "./components/Heart";
 import AppleAnimation from "./components/AppleAnimation";
 import PolygonCanvas from "./components/PolygonCanvas";
-import WebRTCComponent from "./components/WebRTCComponent";
+import WebRTCWss from "./components/WebRTCWss";
 import CaptureScreenshot from "./components/CaptureScreenshot";
 import ClickAnimation from "./components/ClickAnimation";
 import GlowEffects from "./components/GlowEffects";
-import WebcamChat from "./components/WebcamChat";
+import WebRTCLocal from "./components/WebRTCLocal";
 import RealGlassCard from "./components/RealGlassCard";
 import CardHover from "./components/CardHover";
 import ParallaxCard from "./components/ParallaxCard";
@@ -49,14 +49,14 @@ function App() {
       {/* <Heart /> */}
       {/* <AppleAnimation /> */}
       {/* <PolygonCanvas /> */}
-      {/* <WebRTCComponent /> */}
+      {/* <WebRTCWss /> */}
       {/* <CaptureScreenshot /> */}
       {/* <ClickAnimation /> */}
       {/* <GlowEffects /> */}
-      {/* <WebcamChat /> */}
+      <WebRTCLocal />
       {/* <RealGlassCard /> */}
       {/* <CardHover /> */}
-      <ParallaxCard />
+      {/* <ParallaxCard /> */}
     </div>
   );
 }

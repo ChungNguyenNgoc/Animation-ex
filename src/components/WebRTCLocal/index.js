@@ -1,7 +1,7 @@
 import "./style.scss";
 import React, { useEffect, useRef, useState } from "react";
 
-function WebcamStream() {
+const WebRTCLocal = () => {
   const webcamRef = useRef(null);
   const peerRef = useRef(null);
   const mediaRecorderRef = useRef(null);
@@ -13,7 +13,7 @@ function WebcamStream() {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({
           video: true,
-          audio: true,
+          // audio: true,
         });
         webcamRef.current.srcObject = stream;
 
@@ -22,11 +22,13 @@ function WebcamStream() {
         };
         peerRef.current = new RTCPeerConnection(configuration);
 
+        console.debug("stream: ", stream.getTracks());
+
         // Add local stream to peer connection
         stream
           .getTracks()
           .forEach((track) => peerRef.current.addTrack(track, stream));
-
+        console.debug("peerRef.current: ", peerRef.current);
         // Listen for incoming ICE candidates
         peerRef.current.addEventListener("icecandidate", (event) => {
           if (event.candidate) {
@@ -37,7 +39,7 @@ function WebcamStream() {
 
         // Listen for incoming stream from remote peer
         peerRef.current.addEventListener("track", (event) => {
-          // console.debug("Remote stream received:", event.streams[0]);
+          console.debug("Remote stream received:", event.streams[0]);
           // Use the remote stream to display video
         });
 
@@ -114,6 +116,6 @@ function WebcamStream() {
       </div>
     </div>
   );
-}
+};
 
-export default WebcamStream;
+export default WebRTCLocal;

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./style.scss";
 
-const WebRTCComponent = () => {
+const WebRTCWss = () => {
   const webRTCsrc =
     "wss://hgdc-ios-api.dev.altasoftware.vn/go2rtc/api/ws?src=k/NJLE3RhVnvKvJ30+yq9R5I/DGMyee2Brn2/x+u1tjaOhTSBIC5XXV99tc=&media=video+audio";
   const videoRef = useRef(null);
@@ -86,4 +86,4 @@ const WebRTCComponent = () => {
   );
 };
 
-export default WebRTCComponent;
+export default WebRTCWss;
