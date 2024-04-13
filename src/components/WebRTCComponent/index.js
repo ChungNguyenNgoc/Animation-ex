@@ -30,7 +30,7 @@ const WebRTCComponent = () => {
       return pc;
     }
 
-    async function connect(medi) {
+    async function connect(media) {
       console.debug("loading....");
       const pc = await PeerConnection(media);
       const ws = new WebSocket(webRTCsrc);
