@@ -26,6 +26,7 @@ import WebRTCLocal from "./components/WebRTCLocal";
 import RealGlassCard from "./components/RealGlassCard";
 import CardHover from "./components/CardHover";
 import ParallaxCard from "./components/ParallaxCard";
+import EnglishSpeakingSuccess from "./components/EnglishSpeakingSuccess";
 
 function App() {
   return (
@@ -53,10 +54,11 @@ function App() {
       {/* <CaptureScreenshot /> */}
       {/* <ClickAnimation /> */}
       {/* <GlowEffects /> */}
-      <WebRTCLocal />
+      {/* <WebRTCLocal /> */}
       {/* <RealGlassCard /> */}
       {/* <CardHover /> */}
       {/* <ParallaxCard /> */}
+      <EnglishSpeakingSuccess />
     </div>
   );
 }
