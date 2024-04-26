@@ -1,7 +1,8 @@
 export const optionType = [
   { label: "All", value: null },
-  { label: "Pieces of paper", value: 1 },
-  { label: "Questions", value: 2 },
+  { label: "Word", value: 1 },
+  { label: "Phrase", value: 2 },
+  { label: "Question", value: 3 },
 ];
 
 export const optionTopic = [
@@ -26,29 +27,26 @@ export const dataRandom = [
   {
     type: 1,
     unit: 1,
-    data: {
-      phrase: "fine",
-    },
-    data: {
-      phrase: "great",
-    },
-    data: {
-      phrase: "company",
-    },
+    data: ["fine", "great", "company"],
   },
   ///////////////
   {
     type: 2,
     unit: 1,
-    data: {
-      phrase: "How are you today?",
-    },
+    data: [
+      "Hello, may I speak to",
+      "I’m afraid, he is not available now",
+      "He is on another line",
+      "Would you mind holding?",
+      "I’m in a hurry now",
+      "I will leave a message",
+      "Would you like to schedule an appointment?",
+      "Shall we make it 2 o'clock?",
+    ],
   },
   {
-    type: 2,
+    type: 3,
     unit: 1,
-    data: {
-      phrase: "Where are you going?",
-    },
+    data: ["Where are you going?", "How are you today?"],
   },
 ];

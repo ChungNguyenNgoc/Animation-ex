@@ -40,6 +40,7 @@ const EnglishSpeakingSuccess = () => {
                 Topic
               </div>
               <Select
+                mode="multiple"
                 defaultValue={null}
                 onChange={(value) => setTopic(value)}
                 placeholder={"Topic"}
@@ -50,7 +51,7 @@ const EnglishSpeakingSuccess = () => {
             </div>
           </div>
           <div className="english-speaking-success_wrap_content_phrase">
-            Where are you going?
+            How are you today?
           </div>
           <Button>Random</Button>
         </div>
