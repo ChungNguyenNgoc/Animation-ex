@@ -27,7 +27,7 @@ export const dataRandom = [
   {
     type: 1,
     unit: 1,
-    data: ["fine", "great", "company"],
+    data: ["fine", "great", "speak"],
   },
   ///////////////
   {
@@ -37,16 +37,21 @@ export const dataRandom = [
       "Hello, may I speak to",
       "I’m afraid, he is not available now",
       "He is on another line",
-      "Would you mind holding?",
       "I’m in a hurry now",
       "I will leave a message",
-      "Would you like to schedule an appointment?",
       "Shall we make it 2 o'clock?",
+      "Is there any possibility we can move the meeting to Monday?",
+      "So, to confirm, you are Mr. Yang of ABC Company, correct?",
+      "I'll pass along the message to Mr. Smith",
     ],
   },
   {
     type: 3,
     unit: 1,
-    data: ["Where are you going?", "How are you today?"],
+    data: [
+      "Where are you going?",
+      "Would you like to schedule an appointment?",
+      "How are you today?, Would you mind holding?",
+    ],
   },
 ];
