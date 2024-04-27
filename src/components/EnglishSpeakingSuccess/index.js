@@ -31,8 +31,6 @@ const EnglishSpeakingSuccess = () => {
     setDataToRandom(newData);
   }, [type, topics]);
 
-  console.debug("dataToRandom: ", dataToRandom);
-
   const handleRandom = () => {
     const random = Math.floor(Math.random() * dataToRandom.length);
     setPhrase(dataToRandom[random]);
