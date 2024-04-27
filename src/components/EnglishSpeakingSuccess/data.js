@@ -26,42 +26,28 @@ export const globalData = [
   // Unit 1
   {
     type: 1,
-    unit: 1,
-    data: ["fine", "great", "speak"],
-  },
-  ///////////////
-  {
-    type: 2,
-    unit: 1,
-    data: [
-      "Hello, may I speak to",
-      "I’m afraid, he is not available now",
-      "He is on another line",
-      "I’m in a hurry now",
-      "I will leave a message",
-      "Shall we make it 2 o'clock?",
-      "Is there any possibility we can move the meeting to Monday?",
-      "So, to confirm, you are Mr. Yang of ABC Company, correct?",
-      "I'll pass along the message to Mr. Smith",
-    ],
-  },
-  //////////////
-  {
-    type: 3,
-    unit: 1,
-    data: [
-      "Where are you going?",
-      "Would you like to schedule an appointment?",
-      "How are you today?, Would you mind holding?",
-    ],
-  },
-  // Unit 2
-  {
-    type: 1,
     unit: 2,
-    data: ["fine", "great", "speak"],
+    data: [
+      "fine",
+      "great",
+      "well",
+      "bad",
+      "in a hurry",
+      "take care",
+      "complain",
+      "better",
+      "available",
+      "confirm",
+      "department",
+      "experience",
+      "competent",
+      "information",
+      "appreciation",
+      "schedule",
+      "influence",
+      "experience",
+    ],
   },
-  ///////////////
   {
     type: 2,
     unit: 2,
@@ -73,8 +59,9 @@ export const globalData = [
       "I will leave a message",
       "Shall we make it 2 o'clock?",
       "Is there any possibility we can move the meeting to Monday?",
-      "So, to confirm, you are Mr. Yang of ABC Company, correct?",
+      "So, to confirm, you are Ms. Ngoc Lan of SunUni Company, correct?",
       "I'll pass along the message to Mr. Smith",
+      "I can’t complain too much.",
     ],
   },
   {
@@ -83,7 +70,11 @@ export const globalData = [
     data: [
       "Where are you going?",
       "Would you like to schedule an appointment?",
-      "How are you today?, Would you mind holding?",
+      "How are you today?",
+      "Would you mind holding?",
+      "How’s your life?",
+      "What are you doing these days?",
+      "What are you doing these days?",
     ],
   },
 ];
