@@ -26,7 +26,7 @@ export const globalData = [
   // Unit 1
   {
     type: 1,
-    unit: 2,
+    unit: 1,
     data: [
       "fine",
       "great",
@@ -50,7 +50,7 @@ export const globalData = [
   },
   {
     type: 2,
-    unit: 2,
+    unit: 1,
     data: [
       "Hello, may I speak to",
       "I’m afraid, he is not available now",
@@ -66,7 +66,7 @@ export const globalData = [
   },
   {
     type: 3,
-    unit: 2,
+    unit: 1,
     data: [
       "Where are you going?",
       "Would you like to schedule an appointment?",
