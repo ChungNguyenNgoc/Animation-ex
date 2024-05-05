@@ -80,7 +80,9 @@
       &_phrase {
         width: fit-content;
         max-width: 1500px;
+        min-height: 180px;
         margin: 150px auto;
+        margin-bottom: 50px;
         font-size: 50px;
         font-weight: 600;
         color: red;
