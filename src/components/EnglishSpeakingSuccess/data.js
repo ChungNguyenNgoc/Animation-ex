@@ -197,7 +197,7 @@ export const globalData = [
     data: [
       "Take this medicine to relieve your pain",
       "Drink warm tea with honey to ease your pain",
-      "Drink plenty of fluids and take a rest /rest/",
+      "Drink plenty of fluids and take a rest",
       "Rinse your mouth with warm salt water to help ease your pain",
       "Avoid spicy or greasy foods",
       "Apply a heating pad or ice pack to the affected area",
