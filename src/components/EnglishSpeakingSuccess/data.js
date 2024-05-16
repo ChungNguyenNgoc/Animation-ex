@@ -285,4 +285,40 @@ export const globalData = [
       "Where can I buy tickets?",
     ],
   },
+
+  // Unit 5
+  {
+    type: 1,
+    unit: 5,
+    data: [
+      "hobby",
+      "coding",
+      "hitting the gym",
+      "improve my skills",
+      "keep fit",
+      "stay healthy",
+      "relieves stress",
+      "work and study burdens",
+    ],
+  },
+  {
+    type: 2,
+    unit: 5,
+    data: [
+      "My hobbies are...",
+      "I'm interested in...",
+      "I'd like coding and hitting the gym",
+      "I'm into...",
+    ],
+  },
+  {
+    type: 3,
+    unit: 5,
+    data: [
+      "What’s your hobby?",
+      "What are you interested in?",
+      "What do you like to do?",
+      "What are you into?",
+    ],
+  },
 ];
