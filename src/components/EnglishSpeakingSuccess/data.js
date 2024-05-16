@@ -319,6 +319,10 @@ export const globalData = [
       "What are you interested in?",
       "What do you like to do?",
       "What are you into?",
+      "How long have you hit the gym?",
+      "How long have you coded?",
+      "Why did you decide to learn coding?",
+      "Why do you enjoy hitting the gym?",
     ],
   },
 ];
