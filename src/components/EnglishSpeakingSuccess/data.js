@@ -285,7 +285,6 @@ export const globalData = [
       "Where can I buy tickets?",
     ],
   },
-
   // Unit 5
   {
     type: 1,
@@ -302,6 +301,10 @@ export const globalData = [
       "stay healthy",
       "relieves stress",
       "work and study burdens",
+      "at a clothing store",
+      "the blue one",
+      "pair of shoes",
+      "at a shoe store",
     ],
   },
   {
@@ -315,6 +318,17 @@ export const globalData = [
       "Hanging out with my friends gives me funny moments.",
       "Listening to music helps me relax from work and study burdens",
       "Traveling gives me exciting experiences",
+      "I usually wear a medium",
+      " I'm looking for...",
+      "I prefer...",
+      "we have some new arrivals in those colors",
+      "The fitting/changing rooms are right over there.",
+      "Yes, I would. How much is it?",
+      "Thank you for your purchase! Here’s your receipt. Have a great day!",
+      "I wear a size 42.",
+      "Let me show you some options",
+      "They both look good",
+      "It looks good on me/you",
     ],
   },
   {
@@ -332,6 +346,12 @@ export const globalData = [
       "Why do you enjoy listening to music?",
       "Why do you enjoy traveling?",
       "Why do you enjoy hanging out with your friends?",
+      "Excuse me, can you help me find a shirt in my size?",
+      "What size are you looking for?",
+      "These look nice. Can I try them on? / it on?",
+      "Would you like to purchase it?",
+      "Would you like to pay with cash or credit card?",
+      "What size do you need?",
     ],
   },
 ];
