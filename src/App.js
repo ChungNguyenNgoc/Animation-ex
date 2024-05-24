@@ -27,6 +27,7 @@ import RealGlassCard from "./components/RealGlassCard";
 import CardHover from "./components/CardHover";
 import ParallaxCard from "./components/ParallaxCard";
 import EnglishSpeakingSuccess from "./components/EnglishSpeakingSuccess";
+import Counter from "./components/Counter";
 
 function App() {
   return (
@@ -58,7 +59,8 @@ function App() {
       {/* <RealGlassCard /> */}
       {/* <CardHover /> */}
       {/* <ParallaxCard /> */}
-      <EnglishSpeakingSuccess />
+      {/* <EnglishSpeakingSuccess /> */}
+      <Counter />
     </div>
   );
 }
