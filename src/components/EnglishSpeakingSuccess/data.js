@@ -450,9 +450,12 @@ export const globalData = [
     type: 3,
     unit: 7,
     data: [
-      "What do you think about Air quality?",
-      "What do you think about Job Opportunities?",
-      "What do you think about Pace of Life?",
+      "What do you think about Air quality in the city?",
+      "What do you think about Air quality in the countryside?",
+      "What do you think about Job Opportunities in the city?",
+      "What do you think about Job Opportunities the countryside?",
+      "What do you think about Pace of Life in the city?",
+      "What do you think about Pace of Life the countryside?",
     ],
   },
 ];
