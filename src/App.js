@@ -59,8 +59,8 @@ function App() {
       {/* <RealGlassCard /> */}
       {/* <CardHover /> */}
       {/* <ParallaxCard /> */}
-      {/* <EnglishSpeakingSuccess /> */}
-      <Counter />
+      <EnglishSpeakingSuccess />
+      {/* <Counter /> */}
     </div>
   );
 }
