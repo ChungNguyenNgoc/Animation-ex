@@ -28,6 +28,7 @@ import CardHover from "./components/CardHover";
 import ParallaxCard from "./components/ParallaxCard";
 import EnglishSpeakingSuccess from "./components/EnglishSpeakingSuccess";
 import Counter from "./components/Counter";
+import HandleSetTimeoutAndInterval from "./components/HandleSetTimeoutAndInterval";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
       {/* <ParallaxCard /> */}
       <EnglishSpeakingSuccess />
       {/* <Counter /> */}
+      {/* <HandleSetTimeoutAndInterval /> */}
     </div>
   );
 }

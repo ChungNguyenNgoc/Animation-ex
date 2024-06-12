@@ -14,6 +14,7 @@ const Counter = () => {
     setCount((prevCount) => prevCount + multiplier);
   }, [multiplier]);
   console.log("2");
+
   return (
     <div>
       <p>Count: {count}</p>
