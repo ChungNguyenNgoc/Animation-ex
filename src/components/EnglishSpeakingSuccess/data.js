@@ -20,6 +20,7 @@ export const optionsTopic = [
   { label: "UNIT 9: FASHION", value: 9 },
   { label: "UNIT 10: SPORTS", value: 10 },
   { label: "UNIT 11: HEALTH", value: 11 },
+  { label: "UNIT 12: QUESTIONS", value: 12 },
 ];
 
 export const globalData = [
@@ -667,5 +668,44 @@ export const globalData = [
     type: 3,
     unit: 11,
     data: ["What do you usually do to maintain your health?"],
+  },
+  // Unit 12
+  {
+    type: 1,
+    unit: 12,
+    data: [],
+  },
+  {
+    type: 2,
+    unit: 12,
+    data: [],
+  },
+  {
+    type: 3,
+    unit: 12,
+    data: [
+      "Can you tell me about yourself?",
+      "What are your hobbies?",
+      "Do you prefer living in the city or the countryside?",
+      "Do you like shopping?",
+      "Where do you usually shop",
+      "Did you play sports as a child?",
+      "Do you think children should watch TV?",
+      "What do you use the internet for?",
+      "What's a common worry with using the internet?",
+      "Can you trust everything you see online?",
+      "How do you explore new websites or online platforms?",
+      "Is it okay for kids to use the internet early on?",
+      "How do you buy things online?",
+      "How do you usually access the internet?",
+      "How do you stay connected with friends?",
+      "What do you do if you have trouble with the internet?",
+      "How do you find reliable information online?",
+      "What colors do you feel most confident wearing?",
+      "How do you decide what to wear each day?",
+      "Where do your clothes usually come from?",
+      "Tell me about your favorite sport?",
+      "What do you usually do to maintain your health?",
+    ],
   },
 ];
