@@ -726,6 +726,7 @@ export const globalData = [
       "How often do you send e-mails?",
       "Do you like parks? Why / why not?",
       "How often do you visit parks?",
+      "Do you usually see your friends during the week or at weekends?",
     ],
   },
 ];
