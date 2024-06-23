@@ -720,7 +720,6 @@ export const globalData = [
       "Do you play any games?",
       "How do people learn to play games in your country?",
       "Do you like music?",
-      "What kind of music did you listen to when you were young?",
     ],
   },
 ];
