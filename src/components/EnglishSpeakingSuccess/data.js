@@ -724,6 +724,8 @@ export const globalData = [
       "Do you like reading?",
       "Do you prefer working alone or with others? Why?",
       "How often do you send e-mails?",
+      "Do you like parks? Why / why not?",
+      "How often do you visit parks?",
     ],
   },
 ];
