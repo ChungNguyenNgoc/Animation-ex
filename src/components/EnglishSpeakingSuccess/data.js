@@ -688,6 +688,7 @@ export const globalData = [
       "What are your hobbies?",
       "Do you prefer living in the city or the countryside?",
       "Do you like shopping?",
+      "When do you usually go shopping?",
       "Where do you usually shop",
       "Did you play sports as a child?",
       "Do you think children should watch TV?",
@@ -716,6 +717,10 @@ export const globalData = [
       "Which is your favorite room in your home? Why?",
       "Where are you from?",
       "Do you like your home town? (Why?)",
+      "Do you play any games?",
+      "How do people learn to play games in your country?",
+      "Do you like music?",
+      "What kind of music did you listen to when you were young?",
     ],
   },
 ];
