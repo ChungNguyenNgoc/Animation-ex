@@ -723,6 +723,7 @@ export const globalData = [
       "Do you prefer to study alone or with others? Why?",
       "Do you like reading?",
       "Do you prefer working alone or with others? Why?",
+      "How often do you send e-mails?",
     ],
   },
 ];
