@@ -713,7 +713,7 @@ export const globalData = [
       "How much time do you spend at home?",
       "Do you prefer to spend your free time at home or outside the house?",
       "What do you do when you have some free time and you're at home?",
-      " Do you live in a house or an apartment?",
+      "Do you live in a house or an apartment?",
       "Which is your favorite room in your home? Why?",
       "Where are you from?",
       "Do you like your home town? (Why?)",
