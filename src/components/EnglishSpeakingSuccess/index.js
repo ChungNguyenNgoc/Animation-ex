@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style.scss";
 import { Button, Select } from "antd";
 import { GithubOutlined } from "@ant-design/icons";
-import { globalData, optionsTopic, optionsType } from "./data";
+import { globalData, optionsTopic, optionsType } from "./data2";
 
 const EnglishSpeakingSuccess = () => {
   const [type, setType] = useState(null);
