@@ -36,7 +36,6 @@ export const globalData = [
       "Can you tell me your full name, please?",
       "Where are you from?",
       "Can you describe your family?",
-      "Do you have any siblings?",
       "What do your parents do?",
       "Do you spend a lot of time with your family?",
     ],
