@@ -81,7 +81,6 @@ export const globalData = [
       "How long have you lived there?",
       "What do you like about your home?",
       "Is there anything you would like to change about your home?",
-      "Do you plan to move in the near future?",
     ],
   },
   {
