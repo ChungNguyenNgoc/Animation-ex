@@ -102,7 +102,6 @@ export const globalData = [
       "What are the advantages of living in the countryside?",
       "Can you describe your hometown?",
       "Are there any interesting places to visit in your city/countryside?",
-      "Would you like to live in another city or country?",
     ],
   },
   {
