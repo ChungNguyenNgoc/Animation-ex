@@ -144,7 +144,6 @@ export const globalData = [
       "What kind of clothes do you like to wear?",
       "Do you follow fashion trends?",
       "Where do you usually buy your clothes?",
-      "Do you think fashion is important?",
       "Have you ever bought clothes online?",
     ],
   },
