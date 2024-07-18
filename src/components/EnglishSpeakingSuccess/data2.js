@@ -203,10 +203,10 @@ export const globalData = [
     unit: 9,
     data: [
       "Do you enjoy traveling?",
+      "What are the benefits of traveling?",
+      "Do you prefer traveling alone or with others?",
       "What was your last trip like?",
       "What is your favorite travel destination?",
-      "Do you prefer traveling alone or with others?",
-      "What are the benefits of traveling?",
       "Do you have any plans for future travel?",
     ],
   },
