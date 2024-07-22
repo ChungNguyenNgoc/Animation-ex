@@ -182,8 +182,6 @@ export const globalData = [
     unit: 8,
     data: [
       "How do you keep yourself healthy?",
-      "Do you think you have a healthy lifestyle?",
-      "What do you do to stay fit?",
       "Do you think diet is important for health?",
     ],
   },
