@@ -165,7 +165,6 @@ export const globalData = [
       "How often do you exercise?",
       "Do you prefer team sports or individual sports?",
       "Have you ever tried any extreme sports?",
-      "Why do you think physical activity is important?",
     ],
   },
   {
@@ -207,7 +206,6 @@ export const globalData = [
       "Do you prefer traveling alone or with others?",
       "What was your last trip like?",
       "What is your favorite travel destination?",
-      "Do you have any plans for future travel?",
     ],
   },
   {
