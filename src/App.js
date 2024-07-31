@@ -29,6 +29,7 @@ import ParallaxCard from "./components/ParallaxCard";
 import EnglishSpeakingSuccess from "./components/EnglishSpeakingSuccess";
 import Counter from "./components/Counter";
 import HandleSetTimeoutAndInterval from "./components/HandleSetTimeoutAndInterval";
+import ExportXLSX from "./components/ExportXLSX";
 
 function App() {
   return (
@@ -60,9 +61,10 @@ function App() {
       {/* <RealGlassCard /> */}
       {/* <CardHover /> */}
       {/* <ParallaxCard /> */}
-      <EnglishSpeakingSuccess />
+      {/* <EnglishSpeakingSuccess /> */}
       {/* <Counter /> */}
       {/* <HandleSetTimeoutAndInterval /> */}
+      <ExportXLSX />
     </div>
   );
 }
