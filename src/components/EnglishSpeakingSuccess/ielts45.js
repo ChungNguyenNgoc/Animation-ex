@@ -42,7 +42,14 @@ export const globalData = [
   {
     type: 2,
     unit: 1,
-    data: ["", "", "", "", "", "", ""],
+    data: [
+      "My parents always encourage me to do my best in university.",
+      "Although my aunt lives far away, we stay connected through video calls and messaging apps.",
+      "When I was younger, my cousins used to take us to the countryside on weekends, where we would explore nature and have picnics.",
+      "It's important to communicate openly with your parents about your goals and dreams.",
+      "My English teach is very affectionate with her family, I appreciated her warmth and kindness",
+      "Although uncle seem tough, but He is actually very affectionate with his teacher",
+    ],
   },
   {
     type: 3,
