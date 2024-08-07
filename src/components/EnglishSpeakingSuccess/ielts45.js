@@ -61,6 +61,9 @@ export const globalData = [
   {
     type: 3,
     unit: 1,
-    data: ["Do you have a close relationship with your family?"],
+    data: [
+      "Do you have a close relationship with your family?",
+      "How often do you see your friends",
+    ],
   },
 ];
