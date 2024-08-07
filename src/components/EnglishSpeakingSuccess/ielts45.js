@@ -61,12 +61,6 @@ export const globalData = [
   {
     type: 3,
     unit: 1,
-    data: [
-      "Can you tell me your full name, please?",
-      "Where are you from?",
-      "Can you describe your family?",
-      "What do your parents do?",
-      "Do you spend a lot of time with your family?",
-    ],
+    data: ["Do you have a close relationship with your family?"],
   },
 ];
