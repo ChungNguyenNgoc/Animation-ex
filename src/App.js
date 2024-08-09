@@ -61,10 +61,10 @@ function App() {
       {/* <RealGlassCard /> */}
       {/* <CardHover /> */}
       {/* <ParallaxCard /> */}
-      {/* <EnglishSpeakingSuccess /> */}
+      <EnglishSpeakingSuccess />
       {/* <Counter /> */}
       {/* <HandleSetTimeoutAndInterval /> */}
-      <ExportXLSX />
+      {/* <ExportXLSX /> */}
     </div>
   );
 }

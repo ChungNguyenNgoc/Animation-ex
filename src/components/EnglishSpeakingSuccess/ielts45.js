@@ -56,6 +56,8 @@ export const globalData = [
       "My favorite teacher in university was the one who encouraged my passion for technology and made learning enjoyable.",
       "I fell out with Jollie over a misunderstanding",
       "If you fall out with someone, try to communicate openly and honestly to resolve the issue and mend the relationship.",
+      "She is always supportive she never hesitates to lend a helping hand.",
+      "My dog is incredibly loyal and protective, he always watches over me.",
     ],
   },
   {
@@ -63,7 +65,8 @@ export const globalData = [
     unit: 1,
     data: [
       "Do you have a close relationship with your family?",
-      "How often do you see your friends",
+      "How often do you see your friends?",
+      "What is your major in university?",
     ],
   },
 ];
