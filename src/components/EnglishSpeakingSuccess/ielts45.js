@@ -48,7 +48,7 @@ export const globalData = [
       "Although my aunt lives far away, we stay connected through video calls and messaging apps.",
       "When I was younger, my cousins used to take us to the countryside on weekends, where we would explore nature and have picnics.",
       "It's important to communicate openly with your parents about your goals and dreams.",
-      "My English teach is very affectionate with her family, I appreciated her warmth and kindness.",
+      "My English teacher is very affectionate with her family, I appreciated her warmth and kindness.",
       "Although uncle seem tough, but He is actually very affectionate with his teacher.",
       "I'm very trustworthy and never break promises.",
       "My close friend is very reliable and trustworthy, and everyone feels comfortable sharing their secrets with him.",
