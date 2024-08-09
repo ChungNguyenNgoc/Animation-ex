@@ -28,6 +28,71 @@ const ExportXLSX = () => {
     "common.error.title.authorization": "Account Authorization Confirmation!",
   };
 
+  const importXlsxToTwoObjects = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: "array" });
+
+        const sheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
+
+        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+        if (jsonData.length > 0) {
+          // Assuming the first row is the header
+          const header = jsonData[0];
+          const keyIndex = header.indexOf("Key");
+          const vietnameseIndex = header.indexOf("Vietnamese");
+          const englishIndex = header.indexOf("English");
+
+          if (
+            keyIndex === -1 ||
+            vietnameseIndex === -1 ||
+            englishIndex === -1
+          ) {
+            return reject("Key, Vietnamese, or English column not found");
+          }
+
+          const objectVietnamese = {};
+          const objectEnglish = {};
+          jsonData.slice(1).forEach((row) => {
+            const key = row[keyIndex];
+            const vietnamese = row[vietnameseIndex];
+            const english = row[englishIndex];
+            if (key) {
+              objectVietnamese[key] = vietnamese;
+              objectEnglish[key] = english;
+            }
+          });
+
+          resolve({ objectVietnamese, objectEnglish });
+        } else {
+          reject("No data found in the file");
+        }
+      };
+
+      reader.onerror = (error) => reject(error);
+
+      reader.readAsArrayBuffer(file);
+    });
+  };
+
+  // Example usage with an input element:
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    importXlsxToTwoObjects(file)
+      .then(({ objectVietnamese, objectEnglish }) => {
+        console.log("Object Vietnamese:", objectVietnamese);
+        console.log("Object English:", objectEnglish);
+      })
+      .catch((error) => {
+        console.error("Error importing file:", error);
+      });
+  };
+
   const exportToExcel = (
     dataVN,
     dataEN,
@@ -74,6 +139,7 @@ const ExportXLSX = () => {
     <div>
       <h1>Export to Excel</h1>
       <button onClick={handleExport}>Export to Excel</button>
+      <input type="file" onChange={handleFileUpload} />
     </div>
   );
 };
