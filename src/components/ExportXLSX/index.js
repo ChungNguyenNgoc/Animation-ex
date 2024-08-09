@@ -28,7 +28,7 @@ const ExportXLSX = () => {
     "common.error.title.authorization": "Account Authorization Confirmation!",
   };
 
-  const importXlsxToTwoObjects = (file) => {
+  const importXlsxToObject = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
 
@@ -42,33 +42,15 @@ const ExportXLSX = () => {
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
         if (jsonData.length > 0) {
-          // Assuming the first row is the header
-          const header = jsonData[0];
-          const keyIndex = header.indexOf("Key");
-          const vietnameseIndex = header.indexOf("Vietnamese");
-          const englishIndex = header.indexOf("English");
-
-          if (
-            keyIndex === -1 ||
-            vietnameseIndex === -1 ||
-            englishIndex === -1
-          ) {
-            return reject("Key, Vietnamese, or English column not found");
-          }
-
-          const objectVietnamese = {};
-          const objectEnglish = {};
-          jsonData.slice(1).forEach((row) => {
-            const key = row[keyIndex];
-            const vietnamese = row[vietnameseIndex];
-            const english = row[englishIndex];
-            if (key) {
-              objectVietnamese[key] = vietnamese;
-              objectEnglish[key] = english;
-            }
+          const keys = jsonData[0];
+          const result = jsonData.slice(1).map((row) => {
+            let obj = {};
+            keys.forEach((key, i) => {
+              obj[key] = row[i];
+            });
+            return obj;
           });
-
-          resolve({ objectVietnamese, objectEnglish });
+          resolve(result);
         } else {
           reject("No data found in the file");
         }
@@ -83,10 +65,25 @@ const ExportXLSX = () => {
   // Example usage with an input element:
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
-    importXlsxToTwoObjects(file)
-      .then(({ objectVietnamese, objectEnglish }) => {
-        console.log("Object Vietnamese:", objectVietnamese);
-        console.log("Object English:", objectEnglish);
+    importXlsxToObject(file)
+      .then((data) => {
+        console.log("eeee: ", `${"'"}${"Chung"}${"'"}`);
+
+        const _data = data?.filter((it) => it?.Key != null);
+
+        const _dataVietnamese = _data?.reduce((total, it) => {
+          total += `${"'"}${it?.Key}${"'"}:${"'"}${it?.Vietnamese}${"'"},`;
+          return total;
+        }, "");
+
+        const _dataEnglish = _data?.reduce((total, it) => {
+          total += `${"'"}${it?.Key}${"'"}:${"'"}${it?.English}${"'"},`;
+          return total;
+        }, "");
+
+        console.log("_dataVietnamese:", _dataVietnamese);
+        console.log("dataLength:", _data.length);
+        console.log("Imported Data:", _data);
       })
       .catch((error) => {
         console.error("Error importing file:", error);
